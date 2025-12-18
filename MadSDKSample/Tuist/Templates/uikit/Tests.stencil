@@ -1,9 +1,0 @@
-import Testing
-
-@Suite
-struct {{ name }}Tests {
-    @Test
-    func example() async throws {
-        #expect(true)
-    }
-}

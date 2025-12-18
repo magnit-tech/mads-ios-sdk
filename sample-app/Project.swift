@@ -2,6 +2,12 @@ import ProjectDescription
 
 let project = Project(
     name: "SampleApp",
+    packages: [
+        .remote(
+            url: "https://github.com/magnit-tech/mads-ios-sdk",
+            requirement: .upToNextMajor(from: "0.0.1")
+        )
+    ],
     targets: [
         .target(
             name: "MadSDKSampleApp",
@@ -29,11 +35,5 @@ let project = Project(
             resources: [],
             dependencies: [.target(name: "MadSDKSampleApp")]
         ),
-    ],
-    packages: [
-        .remote(
-            url: "https://github.com/magnit-tech/mads-ios-sdk",
-            requirement: .upToNextMajor(from: "0.0.1")
-        )
     ]
 )

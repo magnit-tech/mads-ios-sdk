@@ -1,12 +1,14 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name MadSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import AdSupport
 import AppTrackingTransparency
+import CoreGraphics
 import CoreTelephony
 import DeveloperToolsSupport
 import Foundation
+import Kingfisher
 import Network
 import Swift
 import SwiftUI
@@ -14,24 +16,24 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-public enum MadSDKAsset {
+public enum MadSDKAsset : Swift.Sendable {
   public enum Colors {
-    public enum AdvLabel {
+    public enum AdvLabel : Swift.Sendable {
       public static let background: MadSDK.MadSDKColors
       public static let text: MadSDK.MadSDKColors
     }
-    public enum Button {
-      public enum Background {
+    public enum Button : Swift.Sendable {
+      public enum Background : Swift.Sendable {
         public static let primary: MadSDK.MadSDKColors
         public static let secondary: MadSDK.MadSDKColors
       }
     }
-    public enum Page {
+    public enum Page : Swift.Sendable {
       public static let selected: MadSDK.MadSDKColors
       public static let tint: MadSDK.MadSDKColors
     }
-    public enum Text {
-      public enum Invert {
+    public enum Text : Swift.Sendable {
+      public enum Invert : Swift.Sendable {
         public static let primary: MadSDK.MadSDKColors
       }
       public static let primary: MadSDK.MadSDKColors
@@ -42,10 +44,8 @@ public enum MadSDKAsset {
     public static let copy: MadSDK.MadSDKImages
   }
 }
-@_hasMissingDesignatedInitializers final public class MadSDKColors {
-  final public var name: Swift.String {
-    get
-  }
+@_hasMissingDesignatedInitializers final public class MadSDKColors : Swift.Sendable {
+  final public let name: Swift.String
   public typealias Color = UIKit.UIColor
   @available(iOS 11.0, tvOS 11.0, watchOS 4.0, macOS 10.13, visionOS 1.0, *)
   final public var color: MadSDK.MadSDKColors.Color {
@@ -58,17 +58,17 @@ public enum MadSDKAsset {
   @objc deinit
 }
 extension UIKit.UIColor {
+  #if compiler(>=5.3) && $NonescapableTypes
   @available(iOS 11.0, tvOS 11.0, watchOS 4.0, macOS 10.13, visionOS 1.0, *)
   convenience public init?(asset: MadSDK.MadSDKColors)
+  #endif
 }
 @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, visionOS 1.0, *)
 extension SwiftUICore.Color {
   public init(asset: MadSDK.MadSDKColors)
 }
-public struct MadSDKImages {
-  public var name: Swift.String {
-    get
-  }
+public struct MadSDKImages : Swift.Sendable {
+  public let name: Swift.String
   public typealias Image = UIKit.UIImage
   public var image: MadSDK.MadSDKImages.Image {
     get
@@ -84,36 +84,92 @@ extension SwiftUICore.Image {
   public init(asset: MadSDK.MadSDKImages, label: SwiftUICore.Text)
   public init(decorative asset: MadSDK.MadSDKImages)
 }
-@_inheritsConvenienceInitializers @objc public class MadSDKResources : ObjectiveC.NSObject {
-  @objc public class var bundle: Foundation.Bundle {
+@_inheritsConvenienceInitializers @objc final public class MadSDKResources : ObjectiveC.NSObject {
+  @objc final public class var bundle: Foundation.Bundle {
     @objc get
   }
   @objc override dynamic public init()
   @objc deinit
 }
+public enum CommonIdentifiers {
+  public enum BottomSheet {
+  }
+  public enum AdInfo {
+  }
+  public enum InApp {
+  }
+  public enum Inline {
+    public enum Banner {
+    }
+    public enum Clickout {
+    }
+    public enum Stories {
+    }
+  }
+  public enum MultiFormat {
+  }
+  public enum CClickout {
+  }
+}
+@_spi(Internal) public enum MadsLogLevel {
+  @_spi(Internal) case debug
+  @_spi(Internal) case info
+  @_spi(Internal) case warning
+  @_spi(Internal) case error
+  @_spi(Internal) public var prefix: Swift.String {
+    @_spi(Internal) get
+  }
+  @_spi(Internal) public static func == (a: MadSDK.MadsLogLevel, b: MadSDK.MadsLogLevel) -> Swift.Bool
+  @_spi(Internal) public func hash(into hasher: inout Swift.Hasher)
+  @_spi(Internal) public var hashValue: Swift.Int {
+    @_spi(Internal) get
+  }
+}
+extension MadSDK.InAppAd {
+  public enum Action {
+    case onUrlClicked(info: MadSDK.InAppInfo, url: Swift.String)
+    case onPromocodeCopy(info: MadSDK.InAppInfo, promocode: Swift.String)
+  }
+}
 extension MadSDK.InAppAd {
   public enum Event {
-    case adShown
-    case adFailedToShow
-    case adDeeplinkClicked(Foundation.URL)
-    case adPromocodeClicked(Swift.String)
-    case adDismissed
+    case onCreativeView(MadSDK.InAppInfo)
+    case onCreativeFailedToShow(MadSDK.InAppInfo)
+    case onCreativeDismissed(info: MadSDK.InAppInfo, type: MadSDK.InAppAd.Event.DismissType)
+    public enum DismissType : Swift.String {
+      case close
+      case closeSwipe
+      case closeOutsideClick
+      #if compiler(>=5.3) && $NonescapableTypes
+      public init?(rawValue: Swift.String)
+      #endif
+      public typealias RawValue = Swift.String
+      public var rawValue: Swift.String {
+        get
+      }
+    }
   }
 }
 public protocol InAppAdDelegate : AnyObject {
   func inAppAd(_ ad: MadSDK.InAppAd, didEmit event: MadSDK.InAppAd.Event)
+  func inAppAd(_ ad: MadSDK.InAppAd, didEmit action: MadSDK.InAppAd.Action)
 }
 @_hasMissingDesignatedInitializers final public class InAppAd {
   weak final public var delegate: (any MadSDK.InAppAdDelegate)?
   @objc deinit
 }
 extension MadSDK.MadsSDK {
-  public static func showInAppAd(_ ad: MadSDK.InAppAd, inVC viewController: UIKit.UIViewController, uiConfig: MadSDK.UIConfiguration = UIConfiguration.default)
+  public static func showInAppAd(_ ad: MadSDK.InAppAd, inVC viewController: UIKit.UIViewController)
 }
-public enum InAppAdLoadError : Swift.Error {
+public enum InAppAdLoadError : Swift.Error, Foundation.LocalizedError {
   case network
   case sdkNotInitialized
   case adLoad
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var errorDescription: Swift.String? {
+    get
+  }
+  #endif
   public static func == (a: MadSDK.InAppAdLoadError, b: MadSDK.InAppAdLoadError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -121,103 +177,55 @@ public enum InAppAdLoadError : Swift.Error {
   }
 }
 public protocol InAppAdLoaderDelegate : AnyObject {
-  func inAppAdLoader(_ loader: any MadSDK.InAppAdLoaderProtocol, didChangeState state: MadSDK.InAppAdLoader.State)
+  func inAppAdLoader(_ loader: any MadSDK.InAppAdLoaderProtocol, didReceive response: MadSDK.InAppAdLoader.Response)
 }
 final public class InAppAdLoader : MadSDK.InAppAdLoaderProtocol {
-  public enum State {
-    case loaded(MadSDK.InAppAd)
-    case failed(MadSDK.InAppAdLoadError)
+  public enum Response {
+    case success(MadSDK.InAppAd, MadSDK.AdSlot)
+    case failure(MadSDK.InAppAdLoadError, MadSDK.AdSlot)
+    case noContent(MadSDK.AdSlot)
   }
   weak final public var delegate: (any MadSDK.InAppAdLoaderDelegate)?
   public init()
-  final public func load(padId: Swift.Int, targetings: [Swift.String : Swift.String], isDebugCreativeEnabled: Swift.Bool = false)
+  final public func load(_ request: MadSDK.InAppAdRequest)
   @objc deinit
 }
 public protocol InAppAdLoaderProtocol : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   var delegate: (any MadSDK.InAppAdLoaderDelegate)? { get set }
-  func load(padId: Swift.Int, targetings: [Swift.String : Swift.String], isDebugCreativeEnabled: Swift.Bool)
+  #endif
+  func load(_ request: MadSDK.InAppAdRequest)
 }
-public protocol BottomSheetDismissHandler {
-  var canBeDismissed: Swift.Bool { get }
-  func didFinishDismiss(source: MadSDK.BottomSheetDismissSource)
+public struct InAppAdRequest : Swift.Equatable {
+  public let padId: Swift.String
+  public let targetings: [Swift.String : Swift.String]
+  public let isDebugCreativeEnabled: Swift.Bool
+  public init(padId: Swift.String, targetings: [Swift.String : Swift.String] = [:], isDebugCreativeEnabled: Swift.Bool = false)
+  public static func == (a: MadSDK.InAppAdRequest, b: MadSDK.InAppAdRequest) -> Swift.Bool
 }
-extension MadSDK.BottomSheetDismissHandler {
-  public var canBeDismissed: Swift.Bool {
-    get
-  }
-  public func didFinishDismiss(source: MadSDK.BottomSheetDismissSource)
-}
-public enum BottomSheetDismissSource {
-  case swipe
-  case dimmingViewTap
-  public static func == (a: MadSDK.BottomSheetDismissSource, b: MadSDK.BottomSheetDismissSource) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
+extension MadSDK.InlineAd.Event {
+  public enum Banner {
+    case onBlockView(MadSDK.MultiformatInfo)
+    case onCreativeView(MadSDK.MultiformatInfo)
+    case onUrlClicked(adInfo: MadSDK.MultiformatInfo, type: Swift.String, url: Swift.String)
   }
 }
-public protocol CompactPreferredContentSizeProvider {
-  var compactPreferredContentSize: CoreFoundation.CGSize { get }
-}
-public struct BottomSheetSettingsModel {
-  public static var `default`: MadSDK.BottomSheetSettingsModel
-  public var topMarginRatio: CoreFoundation.CGFloat
-  public var topMarginRatioSmallScreen: CoreFoundation.CGFloat
-  public var dismissAnimationDuration: Swift.Double
-  public var interactiveTransitionCompletionSpeed: CoreFoundation.CGFloat
-  public var deceletrationMaxYTranslation: CoreFoundation.CGFloat
-  public var interactiveTransitionThreshold: CoreFoundation.CGFloat
-  public var transitionAnimationDuration: Swift.Double
-  public var bottomSheetCornerRadius: CoreFoundation.CGFloat
-  public var pullBarStyle: MadSDK.BottomSheetPullBarStyle
-  public var pullDismissVelocity: CoreFoundation.CGFloat
-  public var isPullable: Swift.Bool
-  public var isDismissableByPull: Swift.Bool
-  public var shouldAvoidKeyboard: Swift.Bool
-}
-public enum BottomSheetPullBarStyle {
-  case inside
-  case outside
-  public static func == (a: MadSDK.BottomSheetPullBarStyle, b: MadSDK.BottomSheetPullBarStyle) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
+extension MadSDK.InlineAd.Event {
+  public enum Stories {
+    case onBlockView(MadSDK.StoryInfo)
+    case onCoverView(MadSDK.StoryInfo)
+    case onCreativeView(MadSDK.StoryInfo)
+    case onSlideView(MadSDK.StoryInfo)
+    case onSlideDismissed(MadSDK.StoryInfo)
+    case onUrlClicked(adInfo: MadSDK.StoryInfo, type: Swift.String, url: Swift.String)
+    case onPromocodeCopy(adInfo: MadSDK.StoryInfo, promocode: Swift.String)
+    case onCustomAction(adInfo: MadSDK.StoryInfo, action: Swift.String, data: [Swift.String : Swift.String])
   }
-}
-@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class BottomSheetViewController : UIKit.UIViewController {
-  @_Concurrency.MainActor @preconcurrency final public let sheetSize: MadSDK.SheetSize
-  @_Concurrency.MainActor @preconcurrency public init(childVC: UIKit.UIViewController, settings: MadSDK.BottomSheetSettingsModel = .default, sheetSize: MadSDK.SheetSize = .intrinsic, dismissHandler: (any MadSDK.BottomSheetDismissHandler)?)
-  @_Concurrency.MainActor @preconcurrency @objc override final public func loadView()
-  @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
-  @_Concurrency.MainActor @preconcurrency @objc override final public func viewWillAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidDisappear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor @preconcurrency @objc override final public var preferredContentSize: CoreFoundation.CGSize {
-    @objc get
-    @objc set
-  }
-  @_Concurrency.MainActor @preconcurrency @objc override final public func preferredContentSizeDidChange(forChildContentContainer container: any UIKit.UIContentContainer)
-  @objc deinit
-}
-extension MadSDK.BottomSheetViewController : UIKit.UIViewControllerTransitioningDelegate {
-  @_Concurrency.MainActor @preconcurrency @objc final public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
-  @_Concurrency.MainActor @preconcurrency @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
-  @_Concurrency.MainActor @preconcurrency @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
-  @_Concurrency.MainActor @preconcurrency @objc final public func interactionControllerForDismissal(using animator: any UIKit.UIViewControllerAnimatedTransitioning) -> (any UIKit.UIViewControllerInteractiveTransitioning)?
-  @_Concurrency.MainActor @preconcurrency @objc final public func interactionControllerForPresentation(using animator: any UIKit.UIViewControllerAnimatedTransitioning) -> (any UIKit.UIViewControllerInteractiveTransitioning)?
-}
-public enum SheetSize {
-  case intrinsic
-  case fixed(CoreFoundation.CGFloat)
-  case marginFromTop(CoreFoundation.CGFloat)
-  case percent(CoreFoundation.CGFloat)
 }
 extension MadSDK.InlineAd {
   public enum Event {
-    case shown
-    case failedToShow
-    case deeplinkClicked(Foundation.URL)
-    case promocodeClicked(Swift.String)
-    case dismissed
+    case stories(MadSDK.InlineAd.Event.Stories)
+    case banner(MadSDK.InlineAd.Event.Banner)
   }
 }
 public protocol InlineAdDelegate : AnyObject {
@@ -228,7 +236,9 @@ public protocol InlineAdDelegate : AnyObject {
   @objc deinit
 }
 extension MadSDK.MadsSDK {
-  public static func render(_ ad: MadSDK.InlineAd, inVC viewController: UIKit.UIViewController, uiConfig: MadSDK.UIConfiguration = UIConfiguration.default) -> UIKit.UIView
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func render(_ ad: MadSDK.InlineAd, inVC viewController: UIKit.UIViewController? = nil) -> UIKit.UIView
+  #endif
 }
 public enum InlineAdLoadError : Swift.Error {
   case network
@@ -245,17 +255,49 @@ public protocol InlineAdLoaderDelegate : AnyObject {
 }
 final public class InlineAdLoader : MadSDK.InlineAdLoaderProtocol {
   public enum State {
-    case loaded(MadSDK.InlineAd, MadSDK.AdId)
-    case failed(MadSDK.InlineAdLoadError, MadSDK.AdId)
+    case loaded(MadSDK.InlineAd, MadSDK.AdSlot)
+    case failed(MadSDK.InlineAdLoadError, MadSDK.AdSlot)
   }
   weak final public var delegate: (any MadSDK.InlineAdLoaderDelegate)?
   public init()
-  final public func load(adId: MadSDK.AdId, targetings: [Swift.String : Swift.String] = [:])
+  final public func load(slot: MadSDK.AdSlot, targetings: [Swift.String : Swift.String] = [:], isDebugCreativeEnabled: Swift.Bool = false)
   @objc deinit
 }
 public protocol InlineAdLoaderProtocol : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   var delegate: (any MadSDK.InlineAdLoaderDelegate)? { get set }
-  func load(adId: MadSDK.AdId, targetings: [Swift.String : Swift.String])
+  #endif
+  func load(slot: MadSDK.AdSlot, targetings: [Swift.String : Swift.String], isDebugCreativeEnabled: Swift.Bool)
+}
+@_hasMissingDesignatedInitializers final public class InlineAdProvider {
+  public enum State {
+    case loaded(MadSDK.AdSlot)
+    case failed(MadSDK.InlineAdLoadError, MadSDK.AdSlot)
+  }
+  weak final public var loadingDelegate: (any MadSDK.InlineAdProviderLoadingDelegate)?
+  weak final public var eventDelegate: (any MadSDK.InlineAdProviderEventDelegate)?
+  public init()
+  @objc deinit
+  final public func load(slot: MadSDK.AdSlot, targetings: [Swift.String : Swift.String] = [:], isDebugCreativeEnabled: Swift.Bool = false)
+  final public func load(slots: [MadSDK.AdSlot], targetings: [Swift.String : Swift.String] = [:], isDebugCreativeEnabled: Swift.Bool = false)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func reload(slot: MadSDK.AdSlot? = nil, targetings: [Swift.String : Swift.String] = [:], isDebugCreativeEnabled: Swift.Bool = false)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func view(for slot: MadSDK.AdSlot, in viewController: UIKit.UIViewController? = nil) -> UIKit.UIView?
+  #endif
+}
+extension MadSDK.InlineAdProvider : MadSDK.InlineAdLoaderDelegate {
+  final public func inlineAdLoader(_ loader: any MadSDK.InlineAdLoaderProtocol, didChangeState state: MadSDK.InlineAdLoader.State)
+}
+extension MadSDK.InlineAdProvider : MadSDK.InlineAdDelegate {
+  final public func inlineAd(_ ad: MadSDK.InlineAd, didEmit event: MadSDK.InlineAd.Event)
+}
+public protocol InlineAdProviderEventDelegate : AnyObject {
+  func inlineAdProvider(_ provider: MadSDK.InlineAdProvider, didEmit event: MadSDK.InlineAd.Event, for slot: MadSDK.AdSlot)
+}
+public protocol InlineAdProviderLoadingDelegate : AnyObject {
+  func inlineAdProvider(_ provider: MadSDK.InlineAdProvider, didChangeState state: MadSDK.InlineAdProvider.State)
 }
 public struct Configuration : Swift.Equatable {
   public let isDebugLogsEnabled: Swift.Bool
@@ -263,41 +305,51 @@ public struct Configuration : Swift.Equatable {
   public init(isDebugLogsEnabled: Swift.Bool = false, isDebugCreativeEnabled: Swift.Bool = false)
   public static func == (a: MadSDK.Configuration, b: MadSDK.Configuration) -> Swift.Bool
 }
-public struct UIConfiguration {
-  public enum Color {
-    case hex(Swift.String)
-    case uiColor(UIKit.UIColor)
-  }
-  public let primaryColor: MadSDK.UIConfiguration.Color
-  public let primaryButtonContentColor: MadSDK.UIConfiguration.Color
-  public let secondaryColor: MadSDK.UIConfiguration.Color
-  public let secondaryButtonContentColor: MadSDK.UIConfiguration.Color
-  public let loaderColor: MadSDK.UIConfiguration.Color
-  public let backgroundColor: MadSDK.UIConfiguration.Color
-  public let cornerRadius: CoreFoundation.CGFloat
-  public init(primaryColor: MadSDK.UIConfiguration.Color, primaryButtonContentColor: MadSDK.UIConfiguration.Color, secondaryColor: MadSDK.UIConfiguration.Color, secondaryButtonContentColor: MadSDK.UIConfiguration.Color, loaderColor: MadSDK.UIConfiguration.Color, backgroundColor: MadSDK.UIConfiguration.Color, cornerRadius: CoreFoundation.CGFloat = 15)
-  @usableFromInline
-  internal static let `default`: MadSDK.UIConfiguration
-}
 public enum MadsSDK {
   public static let version: Swift.String
   public static var isDebugLogsEnabled: Swift.Bool
   public static var isDebugCreativeEnabled: Swift.Bool
+  @_spi(Internal) public static var debugLogHandler: ((MadSDK.MadsLogLevel, Swift.String, Swift.String) -> Swift.Void)?
+  @_spi(Internal) public static var showSkippedRoutes: Swift.Bool
   public static var userId: Swift.String?
   public static func initialize()
 }
-public struct AdId : Swift.Equatable {
-  public let padId: Swift.Int
-  public let blockId: Swift.Int
-  public init(padId: Swift.Int, blockId: Swift.Int = 0)
-  public func with(blockId: Swift.Int) -> MadSDK.AdId
-  public static func == (a: MadSDK.AdId, b: MadSDK.AdId) -> Swift.Bool
+public struct AdSlot : Swift.Hashable {
+  public let padId: Swift.String
+  public let position: Swift.Int
+  public init(padId: Swift.String, position: Swift.Int = 0)
+  public func with(position: Swift.Int) -> MadSDK.AdSlot
+  public static func == (a: MadSDK.AdSlot, b: MadSDK.AdSlot) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
+public struct InAppInfo : Swift.Equatable {
+  public let slot: MadSDK.AdSlot
+  public let creativeId: Swift.String?
+  public let format: Swift.String
+  public static func == (a: MadSDK.InAppInfo, b: MadSDK.InAppInfo) -> Swift.Bool
+}
+public struct MultiformatInfo : Swift.Equatable {
+  public let slot: MadSDK.AdSlot
+  public let creativeId: Swift.String?
+  public let format: Swift.String
+  public static func == (a: MadSDK.MultiformatInfo, b: MadSDK.MultiformatInfo) -> Swift.Bool
+}
+public struct StoryInfo : Swift.Equatable {
+  public let slot: MadSDK.AdSlot
+  public let creativeId: Swift.String?
+  public let slideId: Swift.String?
+  public let format: Swift.String
+  public static func == (a: MadSDK.StoryInfo, b: MadSDK.StoryInfo) -> Swift.Bool
+}
+@_spi(Internal) extension MadSDK.MadsLogLevel : Swift.Equatable {}
+@_spi(Internal) extension MadSDK.MadsLogLevel : Swift.Hashable {}
+extension MadSDK.InAppAd.Event.DismissType : Swift.Equatable {}
+extension MadSDK.InAppAd.Event.DismissType : Swift.Hashable {}
+extension MadSDK.InAppAd.Event.DismissType : Swift.RawRepresentable {}
 extension MadSDK.InAppAdLoadError : Swift.Equatable {}
 extension MadSDK.InAppAdLoadError : Swift.Hashable {}
-extension MadSDK.BottomSheetDismissSource : Swift.Equatable {}
-extension MadSDK.BottomSheetDismissSource : Swift.Hashable {}
-extension MadSDK.BottomSheetPullBarStyle : Swift.Equatable {}
-extension MadSDK.BottomSheetPullBarStyle : Swift.Hashable {}
 extension MadSDK.InlineAdLoadError : Swift.Equatable {}
 extension MadSDK.InlineAdLoadError : Swift.Hashable {}

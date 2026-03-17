@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name MadSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import AdSupport
 import AppTrackingTransparency
 import CoreGraphics
@@ -58,10 +58,8 @@ public enum MadSDKAsset : Swift.Sendable {
   @objc deinit
 }
 extension UIKit.UIColor {
-  #if compiler(>=5.3) && $NonescapableTypes
   @available(iOS 11.0, tvOS 11.0, watchOS 4.0, macOS 10.13, visionOS 1.0, *)
   convenience public init?(asset: MadSDK.MadSDKColors)
-  #endif
 }
 @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, visionOS 1.0, *)
 extension SwiftUICore.Color {
@@ -84,8 +82,8 @@ extension SwiftUICore.Image {
   public init(asset: MadSDK.MadSDKImages, label: SwiftUICore.Text)
   public init(decorative asset: MadSDK.MadSDKImages)
 }
-@_inheritsConvenienceInitializers @objc final public class MadSDKResources : ObjectiveC.NSObject {
-  @objc final public class var bundle: Foundation.Bundle {
+@_inheritsConvenienceInitializers @objc public class MadSDKResources : ObjectiveC.NSObject {
+  @objc public class var bundle: Foundation.Bundle {
     @objc get
   }
   @objc override dynamic public init()
@@ -126,9 +124,7 @@ extension MadSDK.InAppAd {
       case close
       case closeSwipe
       case closeOutsideClick
-      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.String)
-      #endif
       public typealias RawValue = Swift.String
       public var rawValue: Swift.String {
         get
@@ -151,11 +147,9 @@ public enum InAppAdLoadError : Swift.Error, Foundation.LocalizedError {
   case network
   case sdkNotInitialized
   case adLoad
-  #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
     get
   }
-  #endif
   public static func == (a: MadSDK.InAppAdLoadError, b: MadSDK.InAppAdLoadError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -177,9 +171,7 @@ final public class InAppAdLoader : MadSDK.InAppAdLoaderProtocol {
   @objc deinit
 }
 public protocol InAppAdLoaderProtocol : AnyObject {
-  #if compiler(>=5.3) && $NonescapableTypes
   var delegate: (any MadSDK.InAppAdLoaderDelegate)? { get set }
-  #endif
   func load(_ request: MadSDK.InAppAdRequest)
 }
 public struct InAppAdRequest : Swift.Equatable {
@@ -222,9 +214,7 @@ public protocol InlineAdDelegate : AnyObject {
   @objc deinit
 }
 extension MadSDK.MadsSDK {
-  #if compiler(>=5.3) && $NonescapableTypes
   public static func render(_ ad: MadSDK.InlineAd, inVC viewController: UIKit.UIViewController? = nil) -> UIKit.UIView
-  #endif
 }
 public enum InlineAdLoadError : Swift.Error {
   case network
@@ -250,9 +240,7 @@ final public class InlineAdLoader : MadSDK.InlineAdLoaderProtocol {
   @objc deinit
 }
 public protocol InlineAdLoaderProtocol : AnyObject {
-  #if compiler(>=5.3) && $NonescapableTypes
   var delegate: (any MadSDK.InlineAdLoaderDelegate)? { get set }
-  #endif
   func load(slot: MadSDK.AdSlot, targetings: [Swift.String : Swift.String], isDebugCreativeEnabled: Swift.Bool)
 }
 @_hasMissingDesignatedInitializers final public class InlineAdProvider {
@@ -266,12 +254,8 @@ public protocol InlineAdLoaderProtocol : AnyObject {
   @objc deinit
   final public func load(slot: MadSDK.AdSlot, targetings: [Swift.String : Swift.String] = [:], isDebugCreativeEnabled: Swift.Bool = false)
   final public func load(slots: [MadSDK.AdSlot], targetings: [Swift.String : Swift.String] = [:], isDebugCreativeEnabled: Swift.Bool = false)
-  #if compiler(>=5.3) && $NonescapableTypes
   final public func reload(slot: MadSDK.AdSlot? = nil, targetings: [Swift.String : Swift.String] = [:], isDebugCreativeEnabled: Swift.Bool = false)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   final public func view(for slot: MadSDK.AdSlot, in viewController: UIKit.UIViewController? = nil) -> UIKit.UIView?
-  #endif
 }
 extension MadSDK.InlineAdProvider : MadSDK.InlineAdLoaderDelegate {
   final public func inlineAdLoader(_ loader: any MadSDK.InlineAdLoaderProtocol, didChangeState state: MadSDK.InlineAdLoader.State)

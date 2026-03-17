@@ -8,7 +8,6 @@ import CoreGraphics
 import CoreTelephony
 import DeveloperToolsSupport
 import Foundation
-import Kingfisher
 import Network
 import Swift
 import SwiftUI

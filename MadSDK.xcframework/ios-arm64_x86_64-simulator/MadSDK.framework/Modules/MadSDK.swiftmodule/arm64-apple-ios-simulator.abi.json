@@ -1408,7 +1408,10 @@
         "name": "Kingfisher",
         "printedName": "Kingfisher",
         "declKind": "Import",
-        "moduleName": "MadSDK"
+        "moduleName": "MadSDK",
+        "declAttributes": [
+          "ImplementationOnly"
+        ]
       },
       {
         "kind": "Import",
@@ -11246,28 +11249,21 @@
     {
       "filePath": "\/Users\/tretyakov_dv\/Projects\/mads-sdk\/ios\/MadSDK\/Sources\/DesignSystem\/Components\/MadsButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 150,
+      "offset": 164,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/tretyakov_dv\/Projects\/mads-sdk\/ios\/MadSDK\/Sources\/DesignSystem\/Components\/MadsButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 206,
-      "length": 2,
-      "value": "16"
-    },
-    {
-      "filePath": "\/Users\/tretyakov_dv\/Projects\/mads-sdk\/ios\/MadSDK\/Sources\/DesignSystem\/Components\/MadsButton.swift",
-      "kind": "IntegerLiteral",
-      "offset": 251,
+      "offset": 209,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/tretyakov_dv\/Projects\/mads-sdk\/ios\/MadSDK\/Sources\/DesignSystem\/Components\/MadsButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 296,
+      "offset": 254,
       "length": 2,
       "value": "12"
     },
@@ -11372,14 +11368,14 @@
     {
       "filePath": "\/Users\/tretyakov_dv\/Projects\/mads-sdk\/ios\/MadSDK\/Sources\/DesignSystem\/Patterns\/AdMarking\/AdInfoContentView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1902,
+      "offset": 1930,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/tretyakov_dv\/Projects\/mads-sdk\/ios\/MadSDK\/Sources\/DesignSystem\/Patterns\/AdMarking\/AdInfoContentView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2509,
+      "offset": 2537,
       "length": 5,
       "value": "false"
     },
@@ -13584,7 +13580,7 @@
     {
       "filePath": "\/Users\/tretyakov_dv\/Projects\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "BooleanLiteral",
-      "offset": 19198,
+      "offset": 18795,
       "length": 4,
       "value": "true"
     },
@@ -13740,7 +13736,7 @@
       "kind": "StringLiteral",
       "offset": 161,
       "length": 7,
-      "value": "\"0.1.0\""
+      "value": "\"0.0.2\""
     },
     {
       "filePath": "\/Users\/tretyakov_dv\/Projects\/mads-sdk\/ios\/MadSDK\/Sources\/MadSDK.swift",

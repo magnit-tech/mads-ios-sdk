@@ -1,0 +1,15 @@
+{
+  "originHash" : "806746210a8ba44619a2ed1727b23fcc7659703f039a0098aad3dd5f5150cadb",
+  "pins" : [
+    {
+      "identity" : "mads-ios-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/magnit-tech/mads-ios-sdk",
+      "state" : {
+        "revision" : "b2e19045a714e5b8334179ec49afea9f2cee274f",
+        "version" : "0.0.1"
+      }
+    }
+  ],
+  "version" : 3
+}

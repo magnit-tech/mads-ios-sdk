@@ -5,7 +5,7 @@ let project = Project(
     packages: [
         .remote(
             url: "https://github.com/magnit-tech/mads-ios-sdk",
-            requirement: .upToNextMajor(from: "0.0.1")
+            requirement: .upToNextMajor(from: "0.2.0")
         )
     ],
     targets: [

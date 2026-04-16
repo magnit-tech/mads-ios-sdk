@@ -1,6 +1,6 @@
 ## Sample app MadSDK
 
-Пример интеграции MadSDK в приложение. Более подробная интрукция находится [тут](https://mad-sdk-doc.vercel.app/)
+Пример интеграции MadSDK в приложение. Более подробная интрукция находится [тут](https://mads-media.magnit.ru/docs/index.html)
 
 1. Для генерации XCode проекта необходимо в папке sample-app вызвать:
 

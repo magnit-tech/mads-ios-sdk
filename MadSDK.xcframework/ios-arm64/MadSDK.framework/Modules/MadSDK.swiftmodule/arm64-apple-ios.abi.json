@@ -19797,23 +19797,23 @@
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 955,
+      "offset": 853,
+      "length": 14,
+      "value": "\"text\/primary\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 1106,
       "length": 21,
       "value": "\"text\/invert\/primary\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 1132,
+      "offset": 1283,
       "length": 23,
       "value": "\"text\/invert\/secondary\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 1303,
-      "length": 14,
-      "value": "\"text\/primary\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
@@ -19869,42 +19869,42 @@
       "kind": "StringLiteral",
       "offset": 3017,
       "length": 25,
-      "value": "\"surface\/primary\/default\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 3198,
-      "length": 25,
-      "value": "\"surface\/primary\/pressed\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 3484,
-      "length": 25,
       "value": "\"surface\/intense\/default\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 3667,
+      "offset": 3200,
       "length": 26,
       "value": "\"surface\/intense\/disabled\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 3849,
+      "offset": 3382,
       "length": 25,
       "value": "\"surface\/intense\/pressed\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 4135,
+      "offset": 3668,
       "length": 25,
       "value": "\"surface\/subdued\/default\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 3954,
+      "length": 25,
+      "value": "\"surface\/primary\/default\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 4135,
+      "length": 25,
+      "value": "\"surface\/primary\/pressed\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
@@ -19923,23 +19923,23 @@
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 4920,
+      "offset": 4926,
+      "length": 26,
+      "value": "\"border\/secondary\/default\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 5211,
       "length": 24,
       "value": "\"border\/primary\/default\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 5101,
+      "offset": 5392,
       "length": 25,
       "value": "\"border\/primary\/disabled\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 5391,
-      "length": 26,
-      "value": "\"border\/secondary\/default\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",

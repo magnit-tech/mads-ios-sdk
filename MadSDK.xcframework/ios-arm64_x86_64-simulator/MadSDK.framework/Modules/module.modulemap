@@ -1,4 +1,3 @@
 framework module MadSDK {
   header "MadSDK-Swift.h"
-  requires objc
 }

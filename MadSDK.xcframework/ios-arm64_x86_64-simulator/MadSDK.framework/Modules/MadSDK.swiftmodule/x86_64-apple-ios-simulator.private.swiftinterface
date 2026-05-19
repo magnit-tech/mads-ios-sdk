@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
-// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name MadSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
+// swift-compiler-version: Apple Swift version 6.3.2 effective-5.10 (swiftlang-6.3.2.1.108 clang-2100.1.1.101)
+// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name MadSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.2
 import AVFoundation
 import AdSupport
 import AppTrackingTransparency
@@ -116,10 +116,8 @@ public enum MadSDKAsset : Swift.Sendable {
   @objc deinit
 }
 extension UIKit.UIColor {
-  #if compiler(>=5.3) && $NonescapableTypes
   @available(iOS 11.0, tvOS 11.0, watchOS 4.0, macOS 10.13, visionOS 1.0, *)
   convenience public init?(asset: MadSDK.MadSDKColors)
-  #endif
 }
 @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, visionOS 1.0, *)
 extension SwiftUICore.Color {
@@ -208,9 +206,7 @@ extension MadSDK.InAppAd {
       case close
       case closeSwipe
       case closeOutsideClick
-      #if compiler(>=5.3) && $NonescapableTypes
       public init?(rawValue: Swift.String)
-      #endif
       public typealias RawValue = Swift.String
       public var rawValue: Swift.String {
         get
@@ -235,20 +231,16 @@ public protocol InAppAdDelegate : AnyObject {
   @objc deinit
 }
 extension MadSDK.MadsSDK {
-  #if compiler(>=5.3) && $NonescapableTypes
   public static func showInAppAd(_ ad: MadSDK.InAppAd, inVC viewController: UIKit.UIViewController? = nil)
-  #endif
 }
 public enum InAppAdLoadError : Swift.Error, Foundation.LocalizedError {
   case network
   case sdkNotInitialized
   case adLoad
   case cancelled
-  #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
     get
   }
-  #endif
   public static func == (a: MadSDK.InAppAdLoadError, b: MadSDK.InAppAdLoadError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -271,9 +263,7 @@ final public class InAppAdLoader : MadSDK.InAppAdLoaderProtocol {
   @objc deinit
 }
 public protocol InAppAdLoaderProtocol : AnyObject {
-  #if compiler(>=5.3) && $NonescapableTypes
   var delegate: (any MadSDK.InAppAdLoaderDelegate)? { get set }
-  #endif
   @discardableResult
   func load(_ request: MadSDK.InAppAdRequest) -> any MadSDK.Cancellable
 }
@@ -333,9 +323,7 @@ public protocol InlineAdDelegate : AnyObject {
   @objc deinit
 }
 extension MadSDK.MadsSDK {
-  #if compiler(>=5.3) && $NonescapableTypes
   public static func render(_ ad: MadSDK.InlineAd, inVC viewController: UIKit.UIViewController? = nil) -> UIKit.UIView
-  #endif
 }
 public enum InlineAdInfo : Swift.Equatable {
   case stories(MadSDK.StoryInfo)
@@ -347,11 +335,9 @@ public enum InlineAdLoadError : Swift.Error, Foundation.LocalizedError {
   case sdkNotInitialized
   case adLoad
   case cancelled
-  #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
     get
   }
-  #endif
   public static func == (a: MadSDK.InlineAdLoadError, b: MadSDK.InlineAdLoadError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -374,9 +360,7 @@ final public class InlineAdLoader : MadSDK.InlineAdLoaderProtocol {
   @objc deinit
 }
 public protocol InlineAdLoaderProtocol : AnyObject {
-  #if compiler(>=5.3) && $NonescapableTypes
   var delegate: (any MadSDK.InlineAdLoaderDelegate)? { get set }
-  #endif
   @discardableResult
   func load(_ request: MadSDK.InlineAdRequest) -> any MadSDK.Cancellable
 }
@@ -403,12 +387,8 @@ public struct InlineNamespace {
   @objc deinit
   final public func load(_ request: MadSDK.InlineAdRequest)
   final public func load(_ requests: [MadSDK.InlineAdRequest])
-  #if compiler(>=5.3) && $NonescapableTypes
   final public func reload(_ request: MadSDK.InlineAdRequest? = nil)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   final public func view(for slot: MadSDK.AdSlot, in viewController: UIKit.UIViewController? = nil) -> UIKit.UIView?
-  #endif
   final public func cancel(slot: MadSDK.AdSlot)
   final public func cancelAll()
 }

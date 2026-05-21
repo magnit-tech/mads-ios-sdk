@@ -162,7 +162,11 @@ public enum CommonIdentifiers {
   public enum AdInfo {
   }
   public enum InApp {
-    public static let markingLabel: Swift.String
+    public static let popupView: Swift.String
+    public static let headerImage: Swift.String
+    public static let title: Swift.String
+    public static let subtitle: Swift.String
+    public static let button: Swift.String
   }
   public enum Inline {
     public enum Banner {
@@ -445,17 +449,40 @@ public struct InAppInfo : Swift.Equatable {
   public let format: Swift.String
   public static func == (a: MadSDK.InAppInfo, b: MadSDK.InAppInfo) -> Swift.Bool
 }
+public struct InlineAdFormat : Swift.Equatable {
+  public let type: MadSDK.InlineAdFormatType
+  public init(type: MadSDK.InlineAdFormatType)
+  public static func == (a: MadSDK.InlineAdFormat, b: MadSDK.InlineAdFormat) -> Swift.Bool
+}
+public enum InlineAdFormatType : Swift.Equatable {
+  case banner(MadSDK.InlineAdFormatType.Banner)
+  case clickout
+  case stories
+  case unknown
+  public enum Banner : Swift.String, Swift.Equatable {
+    case single
+    case carousel
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(rawValue: Swift.String)
+    #endif
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public static func == (a: MadSDK.InlineAdFormatType, b: MadSDK.InlineAdFormatType) -> Swift.Bool
+}
 public struct MultiformatInfo : Swift.Equatable {
   public let slot: MadSDK.AdSlot
   public let creativeId: Swift.String?
-  public let format: Swift.String
+  public let format: MadSDK.InlineAdFormat
   public static func == (a: MadSDK.MultiformatInfo, b: MadSDK.MultiformatInfo) -> Swift.Bool
 }
 public struct StoryInfo : Swift.Equatable {
   public let slot: MadSDK.AdSlot
   public let creativeId: Swift.String?
   public let slideId: Swift.String?
-  public let format: Swift.String
+  public let format: MadSDK.InlineAdFormat
   public static func == (a: MadSDK.StoryInfo, b: MadSDK.StoryInfo) -> Swift.Bool
 }
 extension MadSDK.InAppAd.Event.DismissType : Swift.Equatable {}
@@ -465,3 +492,5 @@ extension MadSDK.InAppAdLoadError : Swift.Equatable {}
 extension MadSDK.InAppAdLoadError : Swift.Hashable {}
 extension MadSDK.InlineAdLoadError : Swift.Equatable {}
 extension MadSDK.InlineAdLoadError : Swift.Hashable {}
+extension MadSDK.InlineAdFormatType.Banner : Swift.Hashable {}
+extension MadSDK.InlineAdFormatType.Banner : Swift.RawRepresentable {}

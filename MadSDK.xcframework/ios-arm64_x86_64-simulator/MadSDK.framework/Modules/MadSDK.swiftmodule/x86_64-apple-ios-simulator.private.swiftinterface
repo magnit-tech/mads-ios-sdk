@@ -170,6 +170,7 @@ public enum CommonIdentifiers {
   }
   public enum Inline {
     public enum Banner {
+      public static let muteButton: Swift.String
       public enum Overlay {
       }
     }

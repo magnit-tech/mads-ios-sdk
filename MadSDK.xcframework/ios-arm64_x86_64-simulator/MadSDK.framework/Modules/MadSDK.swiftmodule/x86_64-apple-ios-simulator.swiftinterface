@@ -98,6 +98,11 @@ public enum MadSDKAsset : Swift.Sendable {
       public static let soundOff: MadSDK.MadSDKImages
       public static let soundOn: MadSDK.MadSDKImages
     }
+    public enum Base24 : Swift.Sendable {
+      public static let close: MadSDK.MadSDKImages
+      public static let soundOff: MadSDK.MadSDKImages
+      public static let soundOn: MadSDK.MadSDKImages
+    }
     public static let check: MadSDK.MadSDKImages
     public static let copy: MadSDK.MadSDKImages
   }

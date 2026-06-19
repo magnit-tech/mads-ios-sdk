@@ -3821,6 +3821,16 @@
       },
       {
         "kind": "Import",
+        "name": "MadsCore",
+        "printedName": "MadsCore",
+        "declKind": "Import",
+        "moduleName": "MadSDK",
+        "declAttributes": [
+          "ImplementationOnly"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Kingfisher",
         "printedName": "Kingfisher",
         "declKind": "Import",
@@ -3859,8 +3869,398 @@
       },
       {
         "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
+        "declKind": "Import",
+        "moduleName": "MadSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
+        "declKind": "Import",
+        "moduleName": "MadSDK"
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MadSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MadsVideoCacheDebug",
+        "printedName": "MadsVideoCacheDebug",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "bannerStrategy",
+            "printedName": "bannerStrategy",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:6MadSDK19MadsVideoCacheDebugO14bannerStrategySSvpZ",
+            "mangledName": "$s6MadSDK19MadsVideoCacheDebugO14bannerStrategySSvpZ",
+            "moduleName": "MadSDK",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:6MadSDK19MadsVideoCacheDebugO14bannerStrategySSvgZ",
+                "mangledName": "$s6MadSDK19MadsVideoCacheDebugO14bannerStrategySSvgZ",
+                "moduleName": "MadSDK",
+                "static": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:6MadSDK19MadsVideoCacheDebugO14bannerStrategySSvsZ",
+                "mangledName": "$s6MadSDK19MadsVideoCacheDebugO14bannerStrategySSvsZ",
+                "moduleName": "MadSDK",
+                "static": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:6MadSDK19MadsVideoCacheDebugO14bannerStrategySSvMZ",
+                "mangledName": "$s6MadSDK19MadsVideoCacheDebugO14bannerStrategySSvMZ",
+                "moduleName": "MadSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "SPIAccessControl"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "allStrategies",
+            "printedName": "allStrategies",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:6MadSDK19MadsVideoCacheDebugO13allStrategiesSaySSGvpZ",
+            "mangledName": "$s6MadSDK19MadsVideoCacheDebugO13allStrategiesSaySSGvpZ",
+            "moduleName": "MadSDK",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:6MadSDK19MadsVideoCacheDebugO13allStrategiesSaySSGvgZ",
+                "mangledName": "$s6MadSDK19MadsVideoCacheDebugO13allStrategiesSaySSGvgZ",
+                "moduleName": "MadSDK",
+                "static": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "posterFullResolution",
+            "printedName": "posterFullResolution",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:6MadSDK19MadsVideoCacheDebugO20posterFullResolutionSbvpZ",
+            "mangledName": "$s6MadSDK19MadsVideoCacheDebugO20posterFullResolutionSbvpZ",
+            "moduleName": "MadSDK",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:6MadSDK19MadsVideoCacheDebugO20posterFullResolutionSbvgZ",
+                "mangledName": "$s6MadSDK19MadsVideoCacheDebugO20posterFullResolutionSbvgZ",
+                "moduleName": "MadSDK",
+                "static": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:6MadSDK19MadsVideoCacheDebugO20posterFullResolutionSbvsZ",
+                "mangledName": "$s6MadSDK19MadsVideoCacheDebugO20posterFullResolutionSbvsZ",
+                "moduleName": "MadSDK",
+                "static": true,
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:6MadSDK19MadsVideoCacheDebugO20posterFullResolutionSbvMZ",
+                "mangledName": "$s6MadSDK19MadsVideoCacheDebugO20posterFullResolutionSbvMZ",
+                "moduleName": "MadSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "SPIAccessControl"
+                ],
+                "spi_group_names": [
+                  "Internal"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "clearCache",
+            "printedName": "clearCache()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:6MadSDK19MadsVideoCacheDebugO05clearE0yyFZ",
+            "mangledName": "$s6MadSDK19MadsVideoCacheDebugO05clearE0yyFZ",
+            "moduleName": "MadSDK",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "spi_group_names": [
+              "Internal"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:6MadSDK19MadsVideoCacheDebugO",
+        "mangledName": "$s6MadSDK19MadsVideoCacheDebugO",
+        "moduleName": "MadSDK",
+        "declAttributes": [
+          "AccessControl",
+          "SPIAccessControl",
+          "RawDocComment"
+        ],
+        "spi_group_names": [
+          "Internal"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
+        "declKind": "Import",
+        "moduleName": "MadSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MadSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MadSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MadSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
+        "declKind": "Import",
+        "moduleName": "MadSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "CryptoKit",
+        "printedName": "CryptoKit",
+        "declKind": "Import",
+        "moduleName": "MadSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "UniformTypeIdentifiers",
+        "printedName": "UniformTypeIdentifiers",
         "declKind": "Import",
         "moduleName": "MadSDK"
       },
@@ -6290,6 +6690,43 @@
             "declKind": "EnumElement",
             "usr": "s:6MadSDK16InAppAdLoadErrorO02adF0yA2CmF",
             "mangledName": "$s6MadSDK16InAppAdLoadErrorO02adF0yA2CmF",
+            "moduleName": "MadSDK"
+          },
+          {
+            "kind": "Var",
+            "name": "requestTimeout",
+            "printedName": "requestTimeout",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MadSDK.InAppAdLoadError.Type) -> MadSDK.InAppAdLoadError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "InAppAdLoadError",
+                    "printedName": "MadSDK.InAppAdLoadError",
+                    "usr": "s:6MadSDK16InAppAdLoadErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MadSDK.InAppAdLoadError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "InAppAdLoadError",
+                        "printedName": "MadSDK.InAppAdLoadError",
+                        "usr": "s:6MadSDK16InAppAdLoadErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:6MadSDK16InAppAdLoadErrorO14requestTimeoutyA2CmF",
+            "mangledName": "$s6MadSDK16InAppAdLoadErrorO14requestTimeoutyA2CmF",
             "moduleName": "MadSDK"
           },
           {
@@ -9259,6 +9696,46 @@
           },
           {
             "kind": "Var",
+            "name": "requestTimeout",
+            "printedName": "requestTimeout",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MadSDK.InlineAdLoadError.Type) -> MadSDK.InlineAdLoadError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "InlineAdLoadError",
+                    "printedName": "MadSDK.InlineAdLoadError",
+                    "usr": "s:6MadSDK17InlineAdLoadErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "MadSDK.InlineAdLoadError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "InlineAdLoadError",
+                        "printedName": "MadSDK.InlineAdLoadError",
+                        "usr": "s:6MadSDK17InlineAdLoadErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:6MadSDK17InlineAdLoadErrorO14requestTimeoutyA2CmF",
+            "mangledName": "$s6MadSDK17InlineAdLoadErrorO14requestTimeoutyA2CmF",
+            "moduleName": "MadSDK",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "cancelled",
             "printedName": "cancelled",
             "children": [
@@ -11832,27 +12309,6 @@
       },
       {
         "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "MadSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "MadSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "MadSDK"
-      },
-      {
-        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -11888,6 +12344,34 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MadSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MadSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MadSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MadSDK"
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -11897,6 +12381,13 @@
         "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MadSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreGraphics",
+        "printedName": "CoreGraphics",
         "declKind": "Import",
         "moduleName": "MadSDK"
       },
@@ -13171,17 +13662,24 @@
           {
             "kind": "Function",
             "name": "initialize",
-            "printedName": "initialize()",
+            "printedName": "initialize(adRequestTimeoutMillis:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "hasDefaultArg": true,
+                "usr": "s:s5Int64V"
               }
             ],
             "declKind": "Func",
-            "usr": "s:6MadSDK04MadsB0O10initializeyyFZ",
-            "mangledName": "$s6MadSDK04MadsB0O10initializeyyFZ",
+            "usr": "s:6MadSDK04MadsB0O10initialize22adRequestTimeoutMillisys5Int64V_tFZ",
+            "mangledName": "$s6MadSDK04MadsB0O10initialize22adRequestTimeoutMillisys5Int64V_tFZ",
             "moduleName": "MadSDK",
             "static": true,
             "declAttributes": [
@@ -15990,6 +16488,139 @@
       "value": "50"
     },
     {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/ByteRange.swift",
+      "kind": "Array",
+      "offset": 1314,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/ByteRange.swift",
+      "kind": "Array",
+      "offset": 1351,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/RangeVideoCache.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1006,
+      "length": 3,
+      "value": "150"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/RangeVideoCache.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1012,
+      "length": 4,
+      "value": "1024"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/RangeVideoCache.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1019,
+      "length": 4,
+      "value": "1024"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/RangeVideoCache.swift",
+      "kind": "StringLiteral",
+      "offset": 1059,
+      "length": 18,
+      "value": "\"MadSDKVideoCache\""
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/RangeVideoCache.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1386,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/RangeVideoCache.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1390,
+      "length": 4,
+      "value": "1024"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/RangeVideoCache.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1397,
+      "length": 4,
+      "value": "1024"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/RangeVideoCache.swift",
+      "kind": "StringLiteral",
+      "offset": 1497,
+      "length": 29,
+      "value": "\"com.mad.sdk.rangevideocache\""
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/VideoPosterCache.swift",
+      "kind": "Dictionary",
+      "offset": 1137,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/VideoPosterCache.swift",
+      "kind": "Array",
+      "offset": 1329,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/VideoPosterCache.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1415,
+      "length": 2,
+      "value": "20"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/VideoRangeDiskStore.swift",
+      "kind": "Dictionary",
+      "offset": 1148,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/VideoResourceLoaderDelegate.swift",
+      "kind": "StringLiteral",
+      "offset": 1333,
+      "length": 13,
+      "value": "\"mads-cache-\""
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/VideoResourceLoaderDelegate.swift",
+      "kind": "Dictionary",
+      "offset": 1478,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/VideoResourceLoaderDelegate.swift",
+      "kind": "Dictionary",
+      "offset": 1541,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/VideoResourceLoaderDelegate.swift",
+      "kind": "Dictionary",
+      "offset": 1607,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Services\/VideoCache\/VideoResourceLoaderDelegate.swift",
+      "kind": "Array",
+      "offset": 1658,
+      "length": 2,
+      "value": "[]"
+    },
+    {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Common\/Streams\/BroadcastStream.swift",
       "kind": "Array",
       "offset": 408,
@@ -16424,6 +17055,13 @@
       "value": "true"
     },
     {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/DesignSystem\/Components\/VideoPlayer\/VideoPlayerConfiguration.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1713,
+      "length": 5,
+      "value": "false"
+    },
+    {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/DesignSystem\/Components\/VideoPlayer\/VideoPlayerView.swift",
       "kind": "IntegerLiteral",
       "offset": 423,
@@ -16433,28 +17071,35 @@
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/DesignSystem\/Components\/VideoPlayer\/VideoPlayerView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2200,
+      "offset": 2180,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/DesignSystem\/Components\/VideoPlayer\/VideoPlayerView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2243,
+      "offset": 2561,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/DesignSystem\/Components\/VideoPlayer\/VideoPlayerView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2294,
+      "offset": 2604,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/DesignSystem\/Components\/VideoPlayer\/VideoPlayerView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2340,
+      "offset": 2655,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/DesignSystem\/Components\/VideoPlayer\/VideoPlayerView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2701,
       "length": 5,
       "value": "false"
     },
@@ -18812,9 +19457,37 @@
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Shared\/VideoAnalytics\/VideoProgressThresholdTracker.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1470,
+      "length": 4,
+      "value": "1000"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Shared\/VideoAnalytics\/VideoProgressThresholdTracker.swift",
+      "kind": "FloatLiteral",
+      "offset": 1650,
+      "length": 4,
+      "value": "0.15"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Shared\/VideoAnalytics\/VideoProgressThresholdTracker.swift",
       "kind": "Array",
-      "offset": 632,
+      "offset": 1922,
       "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Shared\/VideoAnalytics\/VideoProgressThresholdTracker.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2131,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Shared\/VideoAnalytics\/VideoProgressTrackerStore.swift",
+      "kind": "Dictionary",
+      "offset": 1392,
+      "length": 3,
       "value": "[]"
     },
     {
@@ -19239,57 +19912,85 @@
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerCell.swift",
+      "kind": "BooleanLiteral",
+      "offset": 617,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerCell.swift",
+      "kind": "BooleanLiteral",
+      "offset": 706,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerCell.swift",
       "kind": "Array",
-      "offset": 584,
+      "offset": 860,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerCell.swift",
+      "kind": "Array",
+      "offset": 927,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerCell.swift",
       "kind": "BooleanLiteral",
-      "offset": 926,
+      "offset": 1269,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerCell.swift",
       "kind": "BooleanLiteral",
-      "offset": 1002,
+      "offset": 1345,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerCell.swift",
       "kind": "BooleanLiteral",
-      "offset": 2817,
+      "offset": 3688,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerCell.swift",
       "kind": "BooleanLiteral",
-      "offset": 2978,
+      "offset": 3863,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerCell.swift",
       "kind": "BooleanLiteral",
-      "offset": 6028,
+      "offset": 4507,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerCell.swift",
       "kind": "BooleanLiteral",
-      "offset": 6066,
+      "offset": 8151,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerCell.swift",
       "kind": "BooleanLiteral",
-      "offset": 10580,
+      "offset": 8189,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerCell.swift",
+      "kind": "BooleanLiteral",
+      "offset": 14799,
       "length": 5,
       "value": "false"
     },
@@ -19310,42 +20011,56 @@
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerMediaConfiguration.swift",
       "kind": "IntegerLiteral",
-      "offset": 593,
+      "offset": 747,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerMediaConfiguration.swift",
       "kind": "IntegerLiteral",
-      "offset": 805,
+      "offset": 1166,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerMediaConfiguration.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1320,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerMediaConfiguration.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1532,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerMediaConfiguration.swift",
       "kind": "FloatLiteral",
-      "offset": 1010,
+      "offset": 1737,
       "length": 3,
       "value": "0.3"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerMediaCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 1599,
-      "length": 4,
-      "value": "true"
+      "offset": 2947,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerMediaCoordinator.swift",
       "kind": "BooleanLiteral",
-      "offset": 2103,
+      "offset": 4031,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannerMediaCoordinator.swift",
       "kind": "IntegerLiteral",
-      "offset": 2412,
+      "offset": 4340,
       "length": 1,
       "value": "0"
     },
@@ -19499,140 +20214,140 @@
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4467,
+      "offset": 4465,
       "length": 3,
       "value": "500"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "IntegerLiteral",
-      "offset": 4658,
+      "offset": 4656,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "FloatLiteral",
-      "offset": 4859,
+      "offset": 4857,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "FloatLiteral",
-      "offset": 5065,
+      "offset": 5063,
       "length": 4,
       "value": "0.25"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "Array",
-      "offset": 6461,
+      "offset": 6459,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "BooleanLiteral",
-      "offset": 7047,
+      "offset": 7045,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "BooleanLiteral",
-      "offset": 7091,
+      "offset": 7089,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "BooleanLiteral",
-      "offset": 7404,
+      "offset": 7402,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "BooleanLiteral",
-      "offset": 7606,
+      "offset": 7604,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "IntegerLiteral",
-      "offset": 7801,
+      "offset": 7799,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "IntegerLiteral",
-      "offset": 8157,
+      "offset": 8155,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "IntegerLiteral",
-      "offset": 8202,
+      "offset": 8200,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "IntegerLiteral",
-      "offset": 8888,
+      "offset": 8886,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "FloatLiteral",
-      "offset": 8956,
+      "offset": 8954,
       "length": 3,
       "value": "0.1"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "BooleanLiteral",
-      "offset": 9213,
+      "offset": 9211,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "BooleanLiteral",
-      "offset": 9261,
+      "offset": 9259,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "BooleanLiteral",
-      "offset": 9296,
+      "offset": 9294,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "BooleanLiteral",
-      "offset": 9338,
+      "offset": 9336,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "BooleanLiteral",
-      "offset": 9378,
+      "offset": 9376,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersCollectionView.swift",
       "kind": "Array",
-      "offset": 21147,
+      "offset": 23481,
       "length": 2,
       "value": "[]"
     },
@@ -19744,21 +20459,21 @@
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersView.swift",
       "kind": "IntegerLiteral",
-      "offset": 933,
+      "offset": 1064,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1504,
+      "offset": 1635,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Banner\/BannersView.swift",
       "kind": "IntegerLiteral",
-      "offset": 2411,
+      "offset": 2542,
       "length": 1,
       "value": "0"
     },
@@ -20668,266 +21383,266 @@
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "BooleanLiteral",
-      "offset": 13408,
+      "offset": 13867,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "BooleanLiteral",
-      "offset": 13652,
+      "offset": 14111,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 13834,
+      "offset": 14293,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 13844,
+      "offset": 14303,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 13853,
+      "offset": 14312,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 13931,
+      "offset": 14390,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 13941,
+      "offset": 14400,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 13950,
+      "offset": 14409,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 13960,
+      "offset": 14419,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "Array",
-      "offset": 14007,
+      "offset": 14466,
       "length": 6,
       "value": "[0, 1]"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "FloatLiteral",
-      "offset": 14052,
+      "offset": 14511,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 14060,
+      "offset": 14519,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "FloatLiteral",
-      "offset": 14099,
+      "offset": 14558,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 14107,
+      "offset": 14566,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "BooleanLiteral",
-      "offset": 14260,
+      "offset": 14719,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 14445,
+      "offset": 14904,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 14455,
+      "offset": 14914,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 14464,
+      "offset": 14923,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 14545,
+      "offset": 15004,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 14555,
+      "offset": 15014,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 14564,
+      "offset": 15023,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 14574,
+      "offset": 15033,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "Array",
-      "offset": 14621,
+      "offset": 15080,
       "length": 6,
       "value": "[0, 1]"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "FloatLiteral",
-      "offset": 14666,
+      "offset": 15125,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 14674,
+      "offset": 15133,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "FloatLiteral",
-      "offset": 14713,
+      "offset": 15172,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 14721,
+      "offset": 15180,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "BooleanLiteral",
-      "offset": 15558,
+      "offset": 16017,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 16242,
+      "offset": 16701,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "BooleanLiteral",
-      "offset": 16295,
+      "offset": 16754,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 16322,
+      "offset": 16781,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 16548,
+      "offset": 17007,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "IntegerLiteral",
-      "offset": 16764,
+      "offset": 17223,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "BooleanLiteral",
-      "offset": 24431,
+      "offset": 24890,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "BooleanLiteral",
-      "offset": 24904,
+      "offset": 25363,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "BooleanLiteral",
-      "offset": 35447,
+      "offset": 35906,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "BooleanLiteral",
-      "offset": 41061,
+      "offset": 41520,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Player\/Views\/StoryGroupContainerView.swift",
       "kind": "BooleanLiteral",
-      "offset": 44685,
+      "offset": 45144,
       "length": 5,
       "value": "false"
     },
@@ -21032,28 +21747,28 @@
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Prefetch\/StoriesVideoPrewarmer.swift",
       "kind": "IntegerLiteral",
-      "offset": 1455,
+      "offset": 1439,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Prefetch\/StoriesVideoPrewarmer.swift",
       "kind": "Dictionary",
-      "offset": 1739,
+      "offset": 1723,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Prefetch\/StoriesVideoPrewarmer.swift",
       "kind": "Array",
-      "offset": 1913,
+      "offset": 1897,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Inline\/Targets\/Stories\/Prefetch\/StoriesVideoPrewarmer.swift",
       "kind": "IntegerLiteral",
-      "offset": 1942,
+      "offset": 1926,
       "length": 1,
       "value": "2"
     },
@@ -21135,6 +21850,13 @@
       "value": "false"
     },
     {
+      "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/MadSDK.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1896,
+      "length": 6,
+      "value": "10000"
+    },
+    {
       "filePath": "\/Users\/runner\/builds\/J-zT-szWj\/0\/magnitonline\/core\/mobile\/mads-sdk\/ios\/MadSDK\/Sources\/Models\/AdSlot.swift",
       "kind": "IntegerLiteral",
       "offset": 440,
@@ -21188,7 +21910,7 @@
       "kind": "StringLiteral",
       "offset": 88,
       "length": 8,
-      "value": "\"0.10.0\""
+      "value": "\"0.11.0\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
@@ -21200,23 +21922,23 @@
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 955,
+      "offset": 853,
+      "length": 14,
+      "value": "\"text\/primary\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 1106,
       "length": 21,
       "value": "\"text\/invert\/primary\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 1132,
+      "offset": 1283,
       "length": 23,
       "value": "\"text\/invert\/secondary\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 1303,
-      "length": 14,
-      "value": "\"text\/primary\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
@@ -21256,100 +21978,100 @@
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 2454,
-      "length": 17,
-      "value": "\"overlay\/default\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 2804,
-      "length": 25,
-      "value": "\"surface\/primary\/default\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 2985,
-      "length": 25,
-      "value": "\"surface\/primary\/pressed\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 3271,
-      "length": 25,
-      "value": "\"surface\/subdued\/default\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 3551,
-      "length": 23,
-      "value": "\"surface\/muted\/default\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 3728,
-      "length": 23,
-      "value": "\"surface\/muted\/pressed\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 4012,
-      "length": 25,
-      "value": "\"surface\/intense\/default\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 4195,
-      "length": 26,
-      "value": "\"surface\/intense\/disabled\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 4377,
-      "length": 25,
-      "value": "\"surface\/intense\/pressed\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 4742,
-      "length": 24,
-      "value": "\"border\/primary\/default\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 4923,
-      "length": 25,
-      "value": "\"border\/primary\/disabled\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 5213,
-      "length": 26,
-      "value": "\"border\/secondary\/default\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 5484,
+      "offset": 2463,
       "length": 20,
       "value": "\"sliderdots\/default\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 5649,
+      "offset": 2628,
       "length": 21,
       "value": "\"sliderdots\/selected\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 2874,
+      "length": 17,
+      "value": "\"overlay\/default\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 3226,
+      "length": 26,
+      "value": "\"border\/secondary\/default\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 3511,
+      "length": 24,
+      "value": "\"border\/primary\/default\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 3692,
+      "length": 25,
+      "value": "\"border\/primary\/disabled\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 4061,
+      "length": 25,
+      "value": "\"surface\/intense\/default\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 4244,
+      "length": 26,
+      "value": "\"surface\/intense\/disabled\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 4426,
+      "length": 25,
+      "value": "\"surface\/intense\/pressed\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 4706,
+      "length": 23,
+      "value": "\"surface\/muted\/default\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 4883,
+      "length": 23,
+      "value": "\"surface\/muted\/pressed\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 5167,
+      "length": 25,
+      "value": "\"surface\/subdued\/default\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 5453,
+      "length": 25,
+      "value": "\"surface\/primary\/default\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 5634,
+      "length": 25,
+      "value": "\"surface\/primary\/pressed\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
@@ -21396,44 +22118,44 @@
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 7098,
-      "length": 27,
-      "value": "\"button\/background\/primary\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 7287,
-      "length": 29,
-      "value": "\"button\/background\/secondary\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 7550,
-      "length": 17,
-      "value": "\"divider\/primary\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 7711,
-      "length": 19,
-      "value": "\"divider\/secondary\""
-    },
-    {
-      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
-      "kind": "StringLiteral",
-      "offset": 7962,
+      "offset": 6994,
       "length": 20,
       "value": "\"background\/primary\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
       "kind": "StringLiteral",
-      "offset": 8129,
+      "offset": 7161,
       "length": 22,
       "value": "\"background\/secondary\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 7406,
+      "length": 17,
+      "value": "\"divider\/primary\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 7567,
+      "length": 19,
+      "value": "\"divider\/secondary\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 7922,
+      "length": 27,
+      "value": "\"button\/background\/primary\""
+    },
+    {
+      "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",
+      "kind": "StringLiteral",
+      "offset": 8111,
+      "length": 29,
+      "value": "\"button\/background\/secondary\""
     },
     {
       "filePath": "\/Users\/runner\/Library\/Developer\/Xcode\/DerivedData\/MadSDK-fjrsqbncowzyfohdxsxboqpxqdjn\/Build\/Intermediates.noindex\/MadSDK.build\/Release-iphoneos\/MadSDK.build\/DerivedSources\/GeneratedAssetSymbols.swift",

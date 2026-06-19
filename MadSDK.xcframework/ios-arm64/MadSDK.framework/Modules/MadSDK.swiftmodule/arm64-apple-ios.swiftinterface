@@ -7,12 +7,14 @@ import AdSupport
 import AppTrackingTransparency
 import CoreGraphics
 import CoreTelephony
+import CryptoKit
 import DeveloperToolsSupport
 import Foundation
 import Network
 import Swift
 import SwiftUI
 import UIKit
+import UniformTypeIdentifiers
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
@@ -239,6 +241,7 @@ public enum InAppAdLoadError : Swift.Error, Foundation.LocalizedError {
   case network
   case sdkNotInitialized
   case adLoad
+  case requestTimeout
   case cancelled
   #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
@@ -342,6 +345,7 @@ public enum InlineAdLoadError : Swift.Error, Foundation.LocalizedError {
   case network
   case sdkNotInitialized
   case adLoad
+  case requestTimeout
   case cancelled
   #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
@@ -436,7 +440,7 @@ public enum MadsSDK {
   public static var gatewayBaseUrl: Swift.String
   public static let inApp: MadSDK.InAppNamespace
   public static let inLine: MadSDK.InlineNamespace
-  public static func initialize()
+  public static func initialize(adRequestTimeoutMillis: Swift.Int64 = 10_000)
 }
 public struct AdSlot : Swift.Hashable {
   public let padId: Swift.String

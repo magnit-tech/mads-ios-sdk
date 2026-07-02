@@ -495,6 +495,84 @@ public struct StoryInfo : Swift.Equatable {
   public let format: MadSDK.InlineAdFormat
   public static func == (a: MadSDK.StoryInfo, b: MadSDK.StoryInfo) -> Swift.Bool
 }
+extension MadSDK.MadsSDK {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  public static func presentNativeModal(configuration: MadSDK.NativeModalConfiguration = .init(), delegate: (any MadSDK.NativeModalDelegate)? = nil, from presenter: UIKit.UIViewController? = nil, content: (MadSDK.NativeModalHandle) -> UIKit.UIViewController) -> MadSDK.NativeModalHandle
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  public static func presentNativeModal(configuration: MadSDK.NativeModalConfiguration = .init(), delegate: (any MadSDK.NativeModalDelegate)? = nil, from presenter: UIKit.UIViewController? = nil, content: (MadSDK.NativeModalHandle) -> UIKit.UIView) -> MadSDK.NativeModalHandle
+  #endif
+}
+public struct NativeModalConfiguration {
+  public var title: Swift.String?
+  public var showsCloseButton: Swift.Bool
+  public var grabberStyle: MadSDK.NativeModalGrabberStyle
+  public var initialDetent: MadSDK.NativeModalDetent
+  public var tapOutsideToDismiss: Swift.Bool
+  public var allowsPanToDismiss: Swift.Bool
+  public var dimmingAlpha: CoreFoundation.CGFloat
+  public var reservesBottomSafeArea: Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(title: Swift.String? = nil, showsCloseButton: Swift.Bool = true, grabberStyle: MadSDK.NativeModalGrabberStyle = .outside, initialDetent: MadSDK.NativeModalDetent = .intrinsic, tapOutsideToDismiss: Swift.Bool = true, allowsPanToDismiss: Swift.Bool = true, dimmingAlpha: CoreFoundation.CGFloat = 0.55, reservesBottomSafeArea: Swift.Bool = false)
+  #endif
+}
+public enum NativeModalDetent {
+  case intrinsic
+  case fraction(CoreFoundation.CGFloat)
+  case fixed(CoreFoundation.CGFloat)
+}
+public enum NativeModalGrabberStyle {
+  case inside
+  case outside
+  case hidden
+  public static func == (a: MadSDK.NativeModalGrabberStyle, b: MadSDK.NativeModalGrabberStyle) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum NativeModalDismissReason {
+  case swipe
+  case tapOutside
+  case closeButton
+  case programmatic
+  public static func == (a: MadSDK.NativeModalDismissReason, b: MadSDK.NativeModalDismissReason) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol NativeModalDelegate : AnyObject {
+  func nativeModalWillPresent(_ handle: MadSDK.NativeModalHandle)
+  func nativeModalDidPresent(_ handle: MadSDK.NativeModalHandle)
+  func nativeModalShouldDismiss(_ handle: MadSDK.NativeModalHandle, reason: MadSDK.NativeModalDismissReason) -> Swift.Bool
+  func nativeModalWillDismiss(_ handle: MadSDK.NativeModalHandle, reason: MadSDK.NativeModalDismissReason)
+  func nativeModalDidDismiss(_ handle: MadSDK.NativeModalHandle, reason: MadSDK.NativeModalDismissReason)
+}
+extension MadSDK.NativeModalDelegate {
+  public func nativeModalWillPresent(_ handle: MadSDK.NativeModalHandle)
+  public func nativeModalDidPresent(_ handle: MadSDK.NativeModalHandle)
+  public func nativeModalShouldDismiss(_ handle: MadSDK.NativeModalHandle, reason: MadSDK.NativeModalDismissReason) -> Swift.Bool
+  public func nativeModalWillDismiss(_ handle: MadSDK.NativeModalHandle, reason: MadSDK.NativeModalDismissReason)
+  public func nativeModalDidDismiss(_ handle: MadSDK.NativeModalHandle, reason: MadSDK.NativeModalDismissReason)
+}
+@_hasMissingDesignatedInitializers final public class NativeModalHandle {
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func dismiss(completion: (() -> Swift.Void)? = nil)
+  #endif
+  final public func invalidateSize(animated: Swift.Bool = true)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func presentChild(configuration: MadSDK.NativeModalConfiguration = .init(), delegate: (any MadSDK.NativeModalDelegate)? = nil, content: (MadSDK.NativeModalHandle) -> UIKit.UIViewController) -> MadSDK.NativeModalHandle
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func presentChild(configuration: MadSDK.NativeModalConfiguration = .init(), delegate: (any MadSDK.NativeModalDelegate)? = nil, content: (MadSDK.NativeModalHandle) -> UIKit.UIView) -> MadSDK.NativeModalHandle
+  #endif
+  @objc deinit
+}
 extension MadSDK.InAppAd.Event.DismissType : Swift.Equatable {}
 extension MadSDK.InAppAd.Event.DismissType : Swift.Hashable {}
 extension MadSDK.InAppAd.Event.DismissType : Swift.RawRepresentable {}
@@ -504,3 +582,7 @@ extension MadSDK.InlineAdLoadError : Swift.Equatable {}
 extension MadSDK.InlineAdLoadError : Swift.Hashable {}
 extension MadSDK.InlineAdFormatType.Banner : Swift.Hashable {}
 extension MadSDK.InlineAdFormatType.Banner : Swift.RawRepresentable {}
+extension MadSDK.NativeModalGrabberStyle : Swift.Equatable {}
+extension MadSDK.NativeModalGrabberStyle : Swift.Hashable {}
+extension MadSDK.NativeModalDismissReason : Swift.Equatable {}
+extension MadSDK.NativeModalDismissReason : Swift.Hashable {}

@@ -265,6 +265,16 @@ extension MadSDK.MadsSDK {
   public static func showInAppAd(_ ad: MadSDK.InAppAd, inVC viewController: UIKit.UIViewController? = nil)
   #endif
 }
+public enum InAppAdContent {
+  case sdk(MadSDK.InAppAd)
+  case native(MadSDK.InAppAdContentNative)
+}
+public struct InAppAdContentNative : Swift.Equatable {
+  public let modalId: Swift.String
+  public let adInfo: MadSDK.InAppInfo
+  public init(modalId: Swift.String, adInfo: MadSDK.InAppInfo)
+  public static func == (a: MadSDK.InAppAdContentNative, b: MadSDK.InAppAdContentNative) -> Swift.Bool
+}
 public enum InAppAdLoadError : Swift.Error, Foundation.LocalizedError {
   case network
   case sdkNotInitialized
@@ -287,7 +297,7 @@ public protocol InAppAdLoaderDelegate : AnyObject {
 }
 final public class InAppAdLoader : MadSDK.InAppAdLoaderProtocol {
   public enum Response {
-    case success(MadSDK.InAppAd, MadSDK.AdSlot)
+    case success(MadSDK.InAppAdContent, MadSDK.AdSlot)
     case failure(MadSDK.InAppAdLoadError, MadSDK.AdSlot)
     case noContent(MadSDK.AdSlot)
   }
@@ -488,6 +498,9 @@ public struct InAppInfo : Swift.Equatable {
   public let slot: MadSDK.AdSlot
   public let creativeId: Swift.String?
   public let format: Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(slot: MadSDK.AdSlot, creativeId: Swift.String?, format: Swift.String)
+  #endif
   public static func == (a: MadSDK.InAppInfo, b: MadSDK.InAppInfo) -> Swift.Bool
 }
 public struct InlineAdFormat : Swift.Equatable {

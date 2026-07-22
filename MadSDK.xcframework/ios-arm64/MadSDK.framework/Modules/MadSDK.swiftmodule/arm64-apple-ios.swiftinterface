@@ -339,6 +339,9 @@ public protocol InlineAdDelegate : AnyObject {
 }
 @_hasMissingDesignatedInitializers final public class InlineAd {
   weak final public var delegate: (any MadSDK.InlineAdDelegate)?
+  final public var format: MadSDK.InlineAdFormat {
+    get
+  }
   @objc deinit
 }
 extension MadSDK.MadsSDK {
@@ -415,6 +418,9 @@ public struct InlineNamespace {
   final public func load(_ requests: [MadSDK.InlineAdRequest])
   #if compiler(>=5.3) && $NonescapableTypes
   final public func reload(_ request: MadSDK.InlineAdRequest? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func format(for slot: MadSDK.AdSlot) -> MadSDK.InlineAdFormat?
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   final public func view(for slot: MadSDK.AdSlot, in viewController: UIKit.UIViewController? = nil) -> UIKit.UIView?

@@ -564,8 +564,9 @@ public struct NativeModalConfiguration {
   public var allowsPanToDismiss: Swift.Bool
   public var dimmingAlpha: CoreFoundation.CGFloat
   public var reservesBottomSafeArea: Swift.Bool
+  public var adjustsForKeyboard: Swift.Bool
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(title: Swift.String? = nil, showsCloseButton: Swift.Bool = true, grabberStyle: MadSDK.NativeModalGrabberStyle = .outside, initialDetent: MadSDK.NativeModalDetent = .intrinsic, tapOutsideToDismiss: Swift.Bool = true, allowsPanToDismiss: Swift.Bool = true, dimmingAlpha: CoreFoundation.CGFloat = 0.55, reservesBottomSafeArea: Swift.Bool = false)
+  public init(title: Swift.String? = nil, showsCloseButton: Swift.Bool = true, grabberStyle: MadSDK.NativeModalGrabberStyle = .outside, initialDetent: MadSDK.NativeModalDetent = .intrinsic, tapOutsideToDismiss: Swift.Bool = true, allowsPanToDismiss: Swift.Bool = true, dimmingAlpha: CoreFoundation.CGFloat = 0.55, reservesBottomSafeArea: Swift.Bool = false, adjustsForKeyboard: Swift.Bool = false)
   #endif
 }
 public enum NativeModalDetent {

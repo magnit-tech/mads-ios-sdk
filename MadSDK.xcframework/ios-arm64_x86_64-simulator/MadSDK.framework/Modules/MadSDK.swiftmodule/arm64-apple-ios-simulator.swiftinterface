@@ -245,7 +245,7 @@ public struct InAppAdContentNative : Swift.Equatable {
   public let modalId: Swift.String
   public let adInfo: MadSDK.InAppInfo
   public init(modalId: Swift.String, adInfo: MadSDK.InAppInfo)
-  public static func == (a: MadSDK.InAppAdContentNative, b: MadSDK.InAppAdContentNative) -> Swift.Bool
+  public static func == (lhs: MadSDK.InAppAdContentNative, rhs: MadSDK.InAppAdContentNative) -> Swift.Bool
 }
 public enum InAppAdLoadError : Swift.Error, Foundation.LocalizedError {
   case network
@@ -517,11 +517,11 @@ public struct StoryInfo : Swift.Equatable {
 extension MadSDK.MadsSDK {
   #if compiler(>=5.3) && $NonescapableTypes
   @discardableResult
-  public static func presentNativeModal(configuration: MadSDK.NativeModalConfiguration = .init(), delegate: (any MadSDK.NativeModalDelegate)? = nil, from presenter: UIKit.UIViewController? = nil, content: (MadSDK.NativeModalHandle) -> UIKit.UIViewController) -> MadSDK.NativeModalHandle
+  public static func presentNativeModal(ad: MadSDK.InAppAdContentNative, configuration: MadSDK.NativeModalConfiguration = .init(), delegate: (any MadSDK.NativeModalDelegate)? = nil, from presenter: UIKit.UIViewController? = nil, content: (MadSDK.NativeModalHandle) -> UIKit.UIViewController) -> MadSDK.NativeModalHandle
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   @discardableResult
-  public static func presentNativeModal(configuration: MadSDK.NativeModalConfiguration = .init(), delegate: (any MadSDK.NativeModalDelegate)? = nil, from presenter: UIKit.UIViewController? = nil, content: (MadSDK.NativeModalHandle) -> UIKit.UIView) -> MadSDK.NativeModalHandle
+  public static func presentNativeModal(ad: MadSDK.InAppAdContentNative, configuration: MadSDK.NativeModalConfiguration = .init(), delegate: (any MadSDK.NativeModalDelegate)? = nil, from presenter: UIKit.UIViewController? = nil, content: (MadSDK.NativeModalHandle) -> UIKit.UIView) -> MadSDK.NativeModalHandle
   #endif
 }
 public struct NativeModalConfiguration {

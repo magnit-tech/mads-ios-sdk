@@ -102,6 +102,7 @@ public enum MadSDKAsset : Swift.Sendable {
     }
     public enum Base24 : Swift.Sendable {
       public static let close: MadSDK.MadSDKImages
+      public static let rightArrow: MadSDK.MadSDKImages
       public static let soundOff: MadSDK.MadSDKImages
       public static let soundOn: MadSDK.MadSDKImages
     }
@@ -187,8 +188,6 @@ public enum CommonIdentifiers {
     }
   }
   public enum MultiFormat {
-  }
-  public enum Clickout {
   }
 }
 extension MadSDK.InAppAd {
@@ -311,6 +310,13 @@ extension MadSDK.InlineAd.Event {
   }
 }
 extension MadSDK.InlineAd.Event {
+  public enum Clickout {
+    case onBlockView(MadSDK.ClickoutInfo)
+    case onCoverView(MadSDK.ClickoutInfo)
+    case onSlideView(MadSDK.ClickoutInfo)
+  }
+}
+extension MadSDK.InlineAd.Event {
   public enum Stories {
     case onBlockView(MadSDK.StoryInfo)
     case onCoverView(MadSDK.StoryInfo)
@@ -323,6 +329,7 @@ extension MadSDK.InlineAd {
   public enum Event {
     case stories(MadSDK.InlineAd.Event.Stories)
     case banner(MadSDK.InlineAd.Event.Banner)
+    case clickout(MadSDK.InlineAd.Event.Clickout)
   }
 }
 extension MadSDK.InlineAd {
@@ -352,6 +359,7 @@ extension MadSDK.MadsSDK {
 public enum InlineAdInfo : Swift.Equatable {
   case stories(MadSDK.StoryInfo)
   case banner(MadSDK.MultiformatInfo)
+  case clickout(MadSDK.ClickoutInfo)
   public static func == (a: MadSDK.InlineAdInfo, b: MadSDK.InlineAdInfo) -> Swift.Bool
 }
 public enum InlineAdLoadError : Swift.Error, Foundation.LocalizedError {
@@ -468,6 +476,13 @@ public struct AdSlot : Swift.Hashable {
   public var hashValue: Swift.Int {
     get
   }
+}
+public struct ClickoutInfo : Swift.Equatable {
+  public let slot: MadSDK.AdSlot
+  public let itemId: Swift.String?
+  public let slideId: Swift.String?
+  public let format: MadSDK.InlineAdFormat
+  public static func == (a: MadSDK.ClickoutInfo, b: MadSDK.ClickoutInfo) -> Swift.Bool
 }
 public struct InAppInfo : Swift.Equatable {
   public let slot: MadSDK.AdSlot

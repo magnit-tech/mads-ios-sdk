@@ -243,7 +243,16 @@ public enum InAppAdContent {
 public struct InAppAdContentNative : Swift.Equatable {
   public let modalId: Swift.String
   public let adInfo: MadSDK.InAppInfo
-  public init(modalId: Swift.String, adInfo: MadSDK.InAppInfo)
+  public let displayOptions: MadSDK.InAppAdContentNative.DisplayOptions?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(modalId: Swift.String, adInfo: MadSDK.InAppInfo, displayOptions: MadSDK.InAppAdContentNative.DisplayOptions? = nil)
+  #endif
+  public struct DisplayOptions : Swift.Equatable {
+    public let backgroundColor: Swift.String
+    public let cornerRadius: CoreFoundation.CGFloat
+    public init(backgroundColor: Swift.String, cornerRadius: CoreFoundation.CGFloat)
+    public static func == (a: MadSDK.InAppAdContentNative.DisplayOptions, b: MadSDK.InAppAdContentNative.DisplayOptions) -> Swift.Bool
+  }
   public static func == (lhs: MadSDK.InAppAdContentNative, rhs: MadSDK.InAppAdContentNative) -> Swift.Bool
 }
 public enum InAppAdLoadError : Swift.Error, Foundation.LocalizedError {
@@ -549,8 +558,10 @@ public struct NativeModalConfiguration {
   public var dimmingAlpha: CoreFoundation.CGFloat
   public var reservesBottomSafeArea: Swift.Bool
   public var adjustsForKeyboard: Swift.Bool
+  public var cornerRadius: CoreFoundation.CGFloat?
+  public var backgroundColor: UIKit.UIColor?
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(title: Swift.String? = nil, showsCloseButton: Swift.Bool = true, grabberStyle: MadSDK.NativeModalGrabberStyle = .outside, initialDetent: MadSDK.NativeModalDetent = .intrinsic, tapOutsideToDismiss: Swift.Bool = true, allowsPanToDismiss: Swift.Bool = true, dimmingAlpha: CoreFoundation.CGFloat = 0.55, reservesBottomSafeArea: Swift.Bool = false, adjustsForKeyboard: Swift.Bool = false)
+  public init(title: Swift.String? = nil, showsCloseButton: Swift.Bool = true, grabberStyle: MadSDK.NativeModalGrabberStyle = .outside, initialDetent: MadSDK.NativeModalDetent = .intrinsic, tapOutsideToDismiss: Swift.Bool = true, allowsPanToDismiss: Swift.Bool = true, dimmingAlpha: CoreFoundation.CGFloat = 0.55, reservesBottomSafeArea: Swift.Bool = false, adjustsForKeyboard: Swift.Bool = false, cornerRadius: CoreFoundation.CGFloat? = nil, backgroundColor: UIKit.UIColor? = nil)
   #endif
 }
 public enum NativeModalDetent {

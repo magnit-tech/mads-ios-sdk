@@ -654,6 +654,7 @@ extension MadSDK.NativeModalDelegate {
 @_spi(Internal) final public class MadsRequestTracker {
   @_spi(Internal) public init()
   @_spi(Internal) final public func isURLLoaded(part: Swift.String, times: Swift.Int = 1) -> Swift.Bool
+  @_spi(Internal) final public func loadedURLs() -> [Swift.String]
   @_spi(Internal) final public func clear()
   @_spi(Internal) @objc deinit
 }

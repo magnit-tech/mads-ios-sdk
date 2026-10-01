@@ -164,6 +164,13 @@ public struct NoOpCancellable : MadSDK.Cancellable {
   public init()
   public func cancel()
 }
+@_spi(Internal) extension Swift.Array {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) public subscript(safe index: Swift.Array<Element>.Index) -> Element? {
+    @_spi(Internal) get
+  }
+  #endif
+}
 @_spi(Internal) public enum MadsVideoCacheDebug {
   @_spi(Internal) public static var bannerStrategy: Swift.String {
     @_spi(Internal) get
@@ -392,6 +399,9 @@ extension MadSDK.MadsSDK {
   #if compiler(>=5.3) && $NonescapableTypes
   public static func render(_ ad: MadSDK.InlineAd, inVC viewController: UIKit.UIViewController? = nil) -> UIKit.UIView
   #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func showFullscreen(_ ad: MadSDK.InlineAd, inVC viewController: UIKit.UIViewController? = nil)
+  #endif
 }
 public enum InlineAdInfo : Swift.Equatable {
   case stories(MadSDK.StoryInfo)
@@ -469,6 +479,9 @@ public struct InlineNamespace {
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   final public func view(for slot: MadSDK.AdSlot, in viewController: UIKit.UIViewController? = nil) -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_spi(Internal) final public func view(for slot: MadSDK.AdSlot, in viewController: UIKit.UIViewController? = nil, storiesMuteButton: Swift.Bool? = nil, storiesSlideDuration: Foundation.TimeInterval? = nil) -> UIKit.UIView?
   #endif
   final public func cancel(slot: MadSDK.AdSlot)
   final public func cancelAll()

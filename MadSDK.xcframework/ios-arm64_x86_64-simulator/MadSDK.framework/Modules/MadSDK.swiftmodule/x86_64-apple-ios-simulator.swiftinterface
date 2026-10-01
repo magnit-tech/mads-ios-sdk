@@ -364,6 +364,9 @@ extension MadSDK.MadsSDK {
   #if compiler(>=5.3) && $NonescapableTypes
   public static func render(_ ad: MadSDK.InlineAd, inVC viewController: UIKit.UIViewController? = nil) -> UIKit.UIView
   #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func showFullscreen(_ ad: MadSDK.InlineAd, inVC viewController: UIKit.UIViewController? = nil)
+  #endif
 }
 public enum InlineAdInfo : Swift.Equatable {
   case stories(MadSDK.StoryInfo)

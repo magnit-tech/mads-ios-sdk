@@ -171,6 +171,14 @@ public struct NoOpCancellable : MadSDK.Cancellable {
   }
   #endif
 }
+public enum NativeContentEvent : Swift.Equatable {
+  case click
+  case itemClick(index: Swift.Int)
+  public static func == (a: MadSDK.NativeContentEvent, b: MadSDK.NativeContentEvent) -> Swift.Bool
+}
+public protocol NativeContentEventDelegate : AnyObject {
+  func didEmit(_ event: MadSDK.NativeContentEvent)
+}
 @_spi(Internal) public enum MadsVideoCacheDebug {
   @_spi(Internal) public static var bannerStrategy: Swift.String {
     @_spi(Internal) get
@@ -204,6 +212,8 @@ public enum CommonIdentifiers {
       }
     }
     public enum Clickout {
+    }
+    public enum Native {
     }
     public enum Stories {
     }
@@ -361,6 +371,11 @@ extension MadSDK.InlineAd.Event {
   }
 }
 extension MadSDK.InlineAd.Event {
+  public enum Native {
+    case onBlockView(MadSDK.NativeInlineInfo)
+  }
+}
+extension MadSDK.InlineAd.Event {
   public enum Stories {
     case onBlockView(MadSDK.StoryInfo)
     case onCoverView(MadSDK.StoryInfo)
@@ -374,6 +389,7 @@ extension MadSDK.InlineAd {
     case stories(MadSDK.InlineAd.Event.Stories)
     case banner(MadSDK.InlineAd.Event.Banner)
     case clickout(MadSDK.InlineAd.Event.Clickout)
+    case native(MadSDK.InlineAd.Event.Native)
   }
 }
 extension MadSDK.InlineAd {
@@ -398,6 +414,9 @@ public protocol InlineAdDelegate : AnyObject {
 extension MadSDK.MadsSDK {
   #if compiler(>=5.3) && $NonescapableTypes
   public static func render(_ ad: MadSDK.InlineAd, inVC viewController: UIKit.UIViewController? = nil) -> UIKit.UIView
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func render(_ ad: MadSDK.InlineAd, inVC viewController: UIKit.UIViewController? = nil, content: (any MadSDK.NativeContentEventDelegate) -> UIKit.UIView) -> UIKit.UIView
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   public static func showFullscreen(_ ad: MadSDK.InlineAd, inVC viewController: UIKit.UIViewController? = nil)
@@ -481,6 +500,9 @@ public struct InlineNamespace {
   final public func view(for slot: MadSDK.AdSlot, in viewController: UIKit.UIViewController? = nil) -> UIKit.UIView?
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
+  final public func view(for slot: MadSDK.AdSlot, in viewController: UIKit.UIViewController? = nil, content: (any MadSDK.NativeContentEventDelegate) -> UIKit.UIView) -> UIKit.UIView?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_spi(Internal) final public func view(for slot: MadSDK.AdSlot, in viewController: UIKit.UIViewController? = nil, storiesMuteButton: Swift.Bool? = nil, storiesSlideDuration: Foundation.TimeInterval? = nil) -> UIKit.UIView?
   #endif
   final public func cancel(slot: MadSDK.AdSlot)
@@ -556,6 +578,7 @@ public enum InlineAdFormatType : Swift.Equatable {
   case banner(MadSDK.InlineAdFormatType.Banner)
   case clickout
   case stories
+  case native(widgetId: Swift.String)
   case unknown
   public enum Banner : Swift.String, Swift.Equatable {
     case single
@@ -575,6 +598,12 @@ public struct MultiformatInfo : Swift.Equatable {
   public let creativeId: Swift.String?
   public let format: MadSDK.InlineAdFormat
   public static func == (a: MadSDK.MultiformatInfo, b: MadSDK.MultiformatInfo) -> Swift.Bool
+}
+public struct NativeInlineInfo : Swift.Equatable {
+  public let slot: MadSDK.AdSlot
+  public let widgetId: Swift.String
+  public let format: MadSDK.InlineAdFormat
+  public static func == (a: MadSDK.NativeInlineInfo, b: MadSDK.NativeInlineInfo) -> Swift.Bool
 }
 public struct StoryInfo : Swift.Equatable {
   public let slot: MadSDK.AdSlot

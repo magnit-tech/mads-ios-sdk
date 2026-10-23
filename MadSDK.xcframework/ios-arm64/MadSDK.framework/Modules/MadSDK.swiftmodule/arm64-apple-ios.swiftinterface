@@ -498,7 +498,9 @@ public enum MadsSDK {
   public static var gatewayBaseUrl: Swift.String
   public static let inApp: MadSDK.InAppNamespace
   public static let inLine: MadSDK.InlineNamespace
-  public static func initialize(adRequestTimeoutMillis: Swift.Int64 = 10_000)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func initialize(adRequestTimeoutMillis: Swift.Int64 = 10_000, sentry: (any MadSDK.MadsSentryFactory)? = nil)
+  #endif
 }
 public struct AdSlot : Swift.Hashable {
   public let padId: Swift.String
@@ -651,6 +653,46 @@ extension MadSDK.NativeModalDelegate {
   #endif
   @objc deinit
 }
+public protocol MadsSentryFactory {
+  #if compiler(>=5.3) && $NonescapableTypes
+  func makeSentryClient(configuration: MadSDK.MadsSentryConfiguration) -> (any MadSDK.MadsSentryClient)?
+  #endif
+}
+public protocol MadsSentryClient : AnyObject {
+  func capture(event: MadSDK.MadsSentryEvent)
+}
+public struct MadsSentryConfiguration : Swift.Equatable {
+  public let dsn: Swift.String
+  public let trustedCertificates: [Foundation.Data]
+  public let release: Swift.String
+  public init(dsn: Swift.String, trustedCertificates: [Foundation.Data], release: Swift.String)
+  public static func == (a: MadSDK.MadsSentryConfiguration, b: MadSDK.MadsSentryConfiguration) -> Swift.Bool
+}
+public struct MadsSentryEvent : Swift.Equatable {
+  public enum Level : Swift.Equatable {
+    case error
+    case info
+    public static func == (a: MadSDK.MadsSentryEvent.Level, b: MadSDK.MadsSentryEvent.Level) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public let level: MadSDK.MadsSentryEvent.Level
+  public let message: Swift.String
+  public let exceptions: [MadSDK.MadsSentryException]
+  public let tags: [Swift.String : Swift.String]
+  public let extras: [Swift.String : Swift.String]
+  public let timestamp: Foundation.Date
+  public init(level: MadSDK.MadsSentryEvent.Level, message: Swift.String, exceptions: [MadSDK.MadsSentryException], tags: [Swift.String : Swift.String], extras: [Swift.String : Swift.String], timestamp: Foundation.Date)
+  public static func == (a: MadSDK.MadsSentryEvent, b: MadSDK.MadsSentryEvent) -> Swift.Bool
+}
+public struct MadsSentryException : Swift.Equatable {
+  public let type: Swift.String
+  public let value: Swift.String
+  public init(type: Swift.String, value: Swift.String)
+  public static func == (a: MadSDK.MadsSentryException, b: MadSDK.MadsSentryException) -> Swift.Bool
+}
 extension MadSDK.InAppAd.Event.DismissType : Swift.Equatable {}
 extension MadSDK.InAppAd.Event.DismissType : Swift.Hashable {}
 extension MadSDK.InAppAd.Event.DismissType : Swift.RawRepresentable {}
@@ -664,3 +706,4 @@ extension MadSDK.NativeModalGrabberStyle : Swift.Equatable {}
 extension MadSDK.NativeModalGrabberStyle : Swift.Hashable {}
 extension MadSDK.NativeModalDismissReason : Swift.Equatable {}
 extension MadSDK.NativeModalDismissReason : Swift.Hashable {}
+extension MadSDK.MadsSentryEvent.Level : Swift.Hashable {}

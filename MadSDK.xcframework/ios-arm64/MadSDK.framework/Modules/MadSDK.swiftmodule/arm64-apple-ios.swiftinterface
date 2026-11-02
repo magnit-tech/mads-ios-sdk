@@ -11,6 +11,7 @@ import CryptoKit
 import DeveloperToolsSupport
 import Foundation
 import Network
+import Security
 import Swift
 import SwiftUI
 import UIKit
@@ -171,6 +172,28 @@ public enum NativeContentEvent : Swift.Equatable {
 }
 public protocol NativeContentEventDelegate : AnyObject {
   func didEmit(_ event: MadSDK.NativeContentEvent)
+}
+@_Concurrency.MainActor public protocol MadsImageLoader {
+  @_Concurrency.MainActor func isCached(_ url: Foundation.URL) -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  @_Concurrency.MainActor func loadImage(_ url: Foundation.URL, priority: Swift.Float, completion: @escaping (Swift.Result<UIKit.UIImage, any Swift.Error>) -> Swift.Void) -> (any MadSDK.Cancellable)?
+  #endif
+  @_Concurrency.MainActor func prefetch(_ urls: [Foundation.URL], completion: @escaping () -> Swift.Void) -> any MadSDK.Cancellable
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  @_Concurrency.MainActor func setImage(on imageView: UIKit.UIImageView, url: Foundation.URL, placeholder: UIKit.UIImage?, options: [MadSDK.MadsImageLoadingOption], completion: ((Swift.Bool) -> Swift.Void)?) -> (any MadSDK.Cancellable)?
+  #endif
+}
+public enum MadsImageLoadingOption {
+  case transition(MadSDK.MadsImageTransition)
+  case priority(Swift.Float)
+  case backgroundDecode
+  case keepCurrentImageWhileLoading
+}
+public enum MadsImageTransition {
+  case none
+  case fade(Foundation.TimeInterval)
 }
 public enum CommonIdentifiers {
   public enum BottomSheet {
@@ -378,10 +401,10 @@ public protocol InlineAdDelegate : AnyObject {
 }
 extension MadSDK.MadsSDK {
   #if compiler(>=5.3) && $NonescapableTypes
-  public static func render(_ ad: MadSDK.InlineAd, inVC viewController: UIKit.UIViewController? = nil) -> UIKit.UIView
+  public static func render(_ ad: MadSDK.InlineAd, inVC viewController: UIKit.UIViewController? = nil, configuration: MadSDK.InlineAdConfiguration? = nil) -> UIKit.UIView
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
-  public static func render(_ ad: MadSDK.InlineAd, inVC viewController: UIKit.UIViewController? = nil, content: (any MadSDK.NativeContentEventDelegate) -> UIKit.UIView) -> UIKit.UIView
+  public static func render(_ ad: MadSDK.InlineAd, inVC viewController: UIKit.UIViewController? = nil, configuration: MadSDK.InlineAdConfiguration? = nil, content: (any MadSDK.NativeContentEventDelegate) -> UIKit.UIView) -> UIKit.UIView
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   public static func showFullscreen(_ ad: MadSDK.InlineAd, inVC viewController: UIKit.UIViewController? = nil)
@@ -462,10 +485,10 @@ public struct InlineNamespace {
   final public func format(for slot: MadSDK.AdSlot) -> MadSDK.InlineAdFormat?
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
-  final public func view(for slot: MadSDK.AdSlot, in viewController: UIKit.UIViewController? = nil) -> UIKit.UIView?
+  final public func view(for slot: MadSDK.AdSlot, in viewController: UIKit.UIViewController? = nil, configuration: MadSDK.InlineAdConfiguration? = nil) -> UIKit.UIView?
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
-  final public func view(for slot: MadSDK.AdSlot, in viewController: UIKit.UIViewController? = nil, content: (any MadSDK.NativeContentEventDelegate) -> UIKit.UIView) -> UIKit.UIView?
+  final public func view(for slot: MadSDK.AdSlot, in viewController: UIKit.UIViewController? = nil, configuration: MadSDK.InlineAdConfiguration? = nil, content: (any MadSDK.NativeContentEventDelegate) -> UIKit.UIView) -> UIKit.UIView?
   #endif
   final public func cancel(slot: MadSDK.AdSlot)
   final public func cancelAll()
@@ -499,7 +522,7 @@ public enum MadsSDK {
   public static let inApp: MadSDK.InAppNamespace
   public static let inLine: MadSDK.InlineNamespace
   #if compiler(>=5.3) && $NonescapableTypes
-  public static func initialize(adRequestTimeoutMillis: Swift.Int64 = 10_000, sentry: (any MadSDK.MadsSentryFactory)? = nil)
+  public static func initialize(adRequestTimeoutMillis: Swift.Int64 = 10_000, sentry: (any MadSDK.MadsSentryFactory)? = nil, imageLoader: some MadsImageLoader)
   #endif
 }
 public struct AdSlot : Swift.Hashable {
@@ -528,6 +551,18 @@ public struct InAppInfo : Swift.Equatable {
   public init(slot: MadSDK.AdSlot, creativeId: Swift.String?, format: Swift.String)
   #endif
   public static func == (a: MadSDK.InAppInfo, b: MadSDK.InAppInfo) -> Swift.Bool
+}
+public struct InlineAdConfiguration : Swift.Equatable {
+  public var stories: MadSDK.InlineStoriesConfiguration?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(stories: MadSDK.InlineStoriesConfiguration? = nil)
+  #endif
+  public static func == (a: MadSDK.InlineAdConfiguration, b: MadSDK.InlineAdConfiguration) -> Swift.Bool
+}
+public struct InlineStoriesConfiguration : Swift.Equatable {
+  public var contentInsets: UIKit.NSDirectionalEdgeInsets
+  public init(contentInsets: UIKit.NSDirectionalEdgeInsets)
+  public static func == (a: MadSDK.InlineStoriesConfiguration, b: MadSDK.InlineStoriesConfiguration) -> Swift.Bool
 }
 public struct InlineAdFormat : Swift.Equatable {
   public let type: MadSDK.InlineAdFormatType

@@ -15,21 +15,19 @@ import Sentry
 /// Собирается из исходников в приложении и линкуется с той же копией Sentry, что и приложение.
 ///
 /// ```swift
-/// MadsSDK.initialize(sentry: MadsSentryHubFactory(environment: "production"))
+/// MadsSDK.initialize(
+///     sentry: MadsSentryHubFactory(),
+///     imageLoader: MadsKingfisherImageLoader()
+/// )
 /// ```
+///
+/// Окружение событий — значение Sentry по умолчанию, `production`.
 public struct MadsSentryHubFactory: MadsSentryFactory {
 
-    private let environment: String?
-
-    /// - Parameter environment: окружение событий SDK — обычно то же, что у Sentry самого приложения.
-    ///   SDK не знает, debug это сборка приложения или релиз, поэтому значение передаёт приложение.
-    ///   `nil` оставляет значение Sentry по умолчанию — `production`.
-    public init(environment: String?) {
-        self.environment = environment
-    }
+    public init() {}
 
     public func makeSentryClient(configuration: MadsSentryConfiguration) -> MadsSentryClient? {
-        MadsSentryHubClient(configuration: configuration, environment: environment)
+        MadsSentryHubClient(configuration: configuration)
     }
 }
 
@@ -39,13 +37,9 @@ final class MadsSentryHubClient: MadsSentryClient {
     /// `Options.urlSessionDelegate` хранит делегат слабой ссылкой — держим его сами.
     private let sessionDelegate: URLSessionDelegate?
 
-    init?(configuration: MadsSentryConfiguration, environment: String?) {
+    init?(configuration: MadsSentryConfiguration) {
         let sessionDelegate = TrustedCertificatesSessionDelegate(derCertificates: configuration.trustedCertificates)
-        let options = Self.makeOptions(
-            configuration: configuration,
-            environment: environment,
-            sessionDelegate: sessionDelegate
-        )
+        let options = Self.makeOptions(configuration: configuration, sessionDelegate: sessionDelegate)
         guard let client = SentryClient(options: options) else {
             return nil
         }
@@ -53,19 +47,12 @@ final class MadsSentryHubClient: MadsSentryClient {
         self.hub = SentryHub(client: client, andScope: nil)
     }
 
-    static func makeOptions(
-        configuration: MadsSentryConfiguration,
-        environment: String?,
-        sessionDelegate: URLSessionDelegate?
-    ) -> Options {
+    static func makeOptions(configuration: MadsSentryConfiguration, sessionDelegate: URLSessionDelegate?) -> Options {
         let options = Options()
         options.dsn = configuration.dsn
         options.urlSessionDelegate = sessionDelegate
         // По умолчанию Sentry берёт релиз из main bundle, то есть версию приложения.
         options.releaseName = configuration.release
-        if let environment {
-            options.environment = environment
-        }
         // События приходят из корутины KMP: стек потока отправки — это `IOSSentry` и диспетчер корутин,
         // а не место ошибки. Настоящий стек Kotlin лежит в extras `stack_trace`.
         options.attachStacktrace = false

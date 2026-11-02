@@ -6,10 +6,13 @@ let package = Package(
     platforms: [ .iOS(.v15) ],
     products: [
         .library(name: "MadSDK", targets: ["MadSDK"]),
-        .library(name: "MadSDKSentry", targets: ["MadSDKSentry"])
+        .library(name: "MadSDKSentry", targets: ["MadSDKSentry"]),
+        .library(name: "MadSDKKingfisher", targets: ["MadSDKKingfisher"]),
+        .library(name: "MadSDKDefaults", targets: ["MadSDKDefaults"])
     ],
     dependencies: [
-        .package(url: "https://github.com/getsentry/sentry-cocoa.git", "8.0.0"..<"10.0.0")
+        .package(url: "https://github.com/getsentry/sentry-cocoa.git", "8.0.0"..<"10.0.0"),
+        .package(url: "https://github.com/onevcat/Kingfisher.git", from: "8.0.0")
     ],
     targets: [
         .binaryTarget(
@@ -23,6 +26,19 @@ let package = Package(
                 .product(name: "Sentry", package: "sentry-cocoa")
             ],
             path: "MadSDKSentry/Sources"
+        ),
+        .target(
+            name: "MadSDKKingfisher",
+            dependencies: [
+                "MadSDK",
+                .product(name: "Kingfisher", package: "Kingfisher")
+            ],
+            path: "MadSDKKingfisher/Sources"
+        ),
+        .target(
+            name: "MadSDKDefaults",
+            dependencies: ["MadSDK", "MadSDKSentry", "MadSDKKingfisher"],
+            path: "MadSDKDefaults/Sources"
         )
     ]
 )

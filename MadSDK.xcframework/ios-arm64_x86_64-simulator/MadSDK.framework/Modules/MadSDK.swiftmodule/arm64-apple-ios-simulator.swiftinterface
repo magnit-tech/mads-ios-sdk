@@ -674,6 +674,7 @@ extension MadSDK.NativeModalDelegate {
   public func nativeModalDidDismiss(_ handle: MadSDK.NativeModalHandle, reason: MadSDK.NativeModalDismissReason)
 }
 @_hasMissingDesignatedInitializers final public class NativeModalHandle {
+  final public func itemClick(index: Swift.Int)
   #if compiler(>=5.3) && $NonescapableTypes
   final public func dismiss(completion: (() -> Swift.Void)? = nil)
   #endif
